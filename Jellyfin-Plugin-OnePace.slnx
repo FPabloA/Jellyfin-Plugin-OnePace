@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FPabloA.Jellyfin.OnePacePlugin.Tests/FPabloA.Jellyfin.OnePacePlugin.Tests.csproj" />
+  <Project Path="FPabloA.Jellyfin.OnePacePlugin/FPabloA.Jellyfin.OnePacePlugin.csproj" />
+</Solution>

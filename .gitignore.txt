@@ -1,0 +1,5 @@
+.vs/
+FPabloA.Jellyfin.OnePacePlugin/bin/
+FPabloA.Jellyfin.OnePacePlugin/obj/
+FPabloA.Jellyfin.OnePacePlugin.Tests/bin/
+FPabloA.Jellyfin.OnePacePlugin.Tests/obj/
