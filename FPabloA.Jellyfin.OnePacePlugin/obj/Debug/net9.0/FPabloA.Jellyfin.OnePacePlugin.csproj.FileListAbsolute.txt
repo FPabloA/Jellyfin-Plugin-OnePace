@@ -1,0 +1,6 @@
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.csproj.AssemblyReference.cache
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.GeneratedMSBuildEditorConfig.editorconfig
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.AssemblyInfoInputs.cache
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.AssemblyInfo.cs
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.csproj.CoreCompileInputs.cache
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.sourcelink.json

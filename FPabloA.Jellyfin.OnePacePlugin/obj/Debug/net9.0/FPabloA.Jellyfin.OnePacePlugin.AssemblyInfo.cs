@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FPabloA.Jellyfin.OnePacePlugin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7deefbf9bac8dbba839f385274a3971b1e4644ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("FPabloA.Jellyfin.OnePacePlugin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FPabloA.Jellyfin.OnePacePlugin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
