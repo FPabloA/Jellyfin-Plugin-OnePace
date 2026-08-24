@@ -1,0 +1,19 @@
+﻿using MediaBrowser.Model.Entities;
+
+namespace FPabloA.Jellyfin.OnePacePlugin
+{
+    internal static class ProviderIdsExtensions
+    {
+        public static void SetOnePaceId(this IHasProviderIds hasProviderIds, string id)
+        {
+            hasProviderIds.SetProviderId(Plugin.ProviderName, id);
+        }
+
+        //only accept long episode IDs to weed out shorter synthetic IDs that were used before the one pace API exposed CUIDs. (Probably not relevant to this version as onepacerr does not use IDs)
+        public static string? GetOnePaceId(this IHasProviderIds hasProviderIds)
+        {
+            var episodeId = hasProviderIds.GetProviderId(Plugin.ProviderName);
+            return episodeId != null && episodeId.Length == 25 ? episodeId : null;
+        }
+    }
+}

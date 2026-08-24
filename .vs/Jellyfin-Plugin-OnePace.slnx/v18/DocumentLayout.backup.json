@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|d:\\codingprojects\\jellyfin projects\\jellyfin-plugin-onepace\\fpabloa.jellyfin.onepaceplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|solutionrelative:fpabloa.jellyfin.onepaceplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|d:\\codingprojects\\jellyfin projects\\jellyfin-plugin-onepace\\fpabloa.jellyfin.onepaceplugin\\model\\iseries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|solutionrelative:fpabloa.jellyfin.onepaceplugin\\model\\iseries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|d:\\codingprojects\\jellyfin projects\\jellyfin-plugin-onepace\\fpabloa.jellyfin.onepaceplugin\\pluginconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|solutionrelative:fpabloa.jellyfin.onepaceplugin\\pluginconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|d:\\codingprojects\\jellyfin projects\\jellyfin-plugin-onepace\\fpabloa.jellyfin.onepaceplugin\\model\\ilocalization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|solutionrelative:fpabloa.jellyfin.onepaceplugin\\model\\ilocalization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|d:\\codingprojects\\jellyfin projects\\jellyfin-plugin-onepace\\fpabloa.jellyfin.onepaceplugin\\fpabloa.jellyfin.onepaceplugin.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|solutionrelative:fpabloa.jellyfin.onepaceplugin\\fpabloa.jellyfin.onepaceplugin.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|d:\\codingprojects\\jellyfin projects\\jellyfin-plugin-onepace\\fpabloa.jellyfin.onepaceplugin\\model\\iepisode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|solutionrelative:fpabloa.jellyfin.onepaceplugin\\model\\iepisode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|d:\\codingprojects\\jellyfin projects\\jellyfin-plugin-onepace\\fpabloa.jellyfin.onepaceplugin\\model\\iarc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B6C8E4-43F3-9575-7633-4FFC55AD9BE4}|FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj|solutionrelative:fpabloa.jellyfin.onepaceplugin\\model\\iarc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PluginConfiguration.cs",
-              "DocumentMoniker": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\PluginConfiguration.cs",
-              "RelativeDocumentMoniker": "FPabloA.Jellyfin.OnePacePlugin\\PluginConfiguration.cs",
-              "ToolTip": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\PluginConfiguration.cs",
-              "RelativeToolTip": "FPabloA.Jellyfin.OnePacePlugin\\PluginConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ISeries.cs",
+              "DocumentMoniker": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\ISeries.cs",
+              "RelativeDocumentMoniker": "FPabloA.Jellyfin.OnePacePlugin\\Model\\ISeries.cs",
+              "ToolTip": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\ISeries.cs",
+              "RelativeToolTip": "FPabloA.Jellyfin.OnePacePlugin\\Model\\ISeries.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-20T18:00:16.528Z",
+              "WhenOpened": "2026-08-24T17:09:04.948Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Plugin.cs",
-              "DocumentMoniker": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Plugin.cs",
-              "RelativeDocumentMoniker": "FPabloA.Jellyfin.OnePacePlugin\\Plugin.cs",
-              "ToolTip": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Plugin.cs",
-              "RelativeToolTip": "FPabloA.Jellyfin.OnePacePlugin\\Plugin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ILocalization.cs",
+              "DocumentMoniker": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\ILocalization.cs",
+              "RelativeDocumentMoniker": "FPabloA.Jellyfin.OnePacePlugin\\Model\\ILocalization.cs",
+              "ToolTip": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\ILocalization.cs",
+              "RelativeToolTip": "FPabloA.Jellyfin.OnePacePlugin\\Model\\ILocalization.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-20T17:50:29.087Z",
+              "WhenOpened": "2026-08-24T16:57:02.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IArc.cs",
+              "DocumentMoniker": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\IArc.cs",
+              "RelativeDocumentMoniker": "FPabloA.Jellyfin.OnePacePlugin\\Model\\IArc.cs",
+              "ToolTip": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\IArc.cs",
+              "RelativeToolTip": "FPabloA.Jellyfin.OnePacePlugin\\Model\\IArc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T16:50:44.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FPabloA.Jellyfin.OnePacePlugin",
-              "DocumentMoniker": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj",
-              "RelativeDocumentMoniker": "FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj",
-              "ToolTip": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj",
-              "RelativeToolTip": "FPabloA.Jellyfin.OnePacePlugin\\FPabloA.Jellyfin.OnePacePlugin.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-08-20T17:49:27.289Z",
+              "Title": "IEpisode.cs",
+              "DocumentMoniker": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\IEpisode.cs",
+              "RelativeDocumentMoniker": "FPabloA.Jellyfin.OnePacePlugin\\Model\\IEpisode.cs",
+              "ToolTip": "D:\\CodingProjects\\Jellyfin Projects\\Jellyfin-Plugin-OnePace\\FPabloA.Jellyfin.OnePacePlugin\\Model\\IEpisode.cs",
+              "RelativeToolTip": "FPabloA.Jellyfin.OnePacePlugin\\Model\\IEpisode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T16:44:32.694Z",
               "EditorCaption": ""
             }
           ]
