@@ -2,7 +2,7 @@
 namespace FPabloA.Jellyfin.OnePacePlugin.Model
 {
     //Represents the localization for either a series, arc, or an episode (OnePacerr API doesn't seem to provide data like language codes)
-    internal interface ILocalization
+    public interface ILocalization
     {
         //Gets the ISO 639-1 language code for the content
         string LanguageCode { get; }

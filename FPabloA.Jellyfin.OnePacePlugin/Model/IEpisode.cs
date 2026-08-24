@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FPabloA.Jellyfin.OnePacePlugin.Model
 {
     //Represents a series episode
-    internal interface IEpisode
+    public interface IEpisode
     {
         //Gets the CUID for the Episode (might not be relevant anymore, unless this is for jellyfin purposes and not one pace)
         string Id { get; }

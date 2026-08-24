@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FPabloA.Jellyfin.OnePacePlugin.Model
 {
     //Represents a series
-    internal interface ISeries
+    public interface ISeries
     {
         //Gets the invariant title of the series, e.g. "One Pace"
         string InvariantTitle { get; }

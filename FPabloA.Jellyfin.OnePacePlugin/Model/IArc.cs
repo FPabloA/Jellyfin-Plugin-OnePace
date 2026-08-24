@@ -3,7 +3,7 @@
 namespace FPabloA.Jellyfin.OnePacePlugin.Model
 {
     //Represents a series arc
-    internal interface IArc
+    public interface IArc
     {
         //Gets the CUID for the Arc (might not be relevant anymore, unless this is for jellyfin purposes and not one pace)
         string Id { get; }

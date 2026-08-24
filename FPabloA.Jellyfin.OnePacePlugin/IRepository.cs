@@ -6,7 +6,7 @@ using FPabloA.Jellyfin.OnePacePlugin.Model;
 namespace FPabloA.Jellyfin.OnePacePlugin
 {
     //Provides One Pace metadata
-    internal interface IRepository
+    public interface IRepository
     {
         //Retrieves the series model
         Task<ISeries?> FindSeriesAsync(CancellationToken cancellationToken);
