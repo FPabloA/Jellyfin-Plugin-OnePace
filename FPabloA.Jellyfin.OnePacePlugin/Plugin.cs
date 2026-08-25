@@ -3,7 +3,6 @@ using MediaBrowser.Common.Plugins;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace FPabloA.Jellyfin.OnePacePlugin
