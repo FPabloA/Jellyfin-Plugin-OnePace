@@ -64,49 +64,19 @@
               "target": "Package",
               "version": "[10.*, )"
             },
-            "MSTest.TestAdapter": {
-              "target": "Package",
-              "version": "[4.0.2, )",
-              "versionOverride": "[4.0.2, )"
-            },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[4.0.2, )",
-              "versionOverride": "[4.0.2, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.*, )"
-            },
-            "Microsoft.Testing.Extensions.CodeCoverage": {
-              "target": "Package",
-              "version": "[18.1.0, )",
-              "versionOverride": "[18.1.0, )"
-            },
-            "Microsoft.Testing.Extensions.TrxReport": {
-              "target": "Package",
-              "version": "[2.0.2, )",
-              "versionOverride": "[2.0.2, )"
-            },
             "Moq": {
               "target": "Package",
-              "version": "[4.*, )"
+              "version": "[*, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.*, )"
+              "version": "[*, )"
             },
-            "xunit": {
+            "xunit.v3": {
               "target": "Package",
-              "version": "[2.*, )"
-            },
-            "xunit.runner.visualstudio": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.*, )"
+              "version": "[*, )"
             }
           },
           "imports": [

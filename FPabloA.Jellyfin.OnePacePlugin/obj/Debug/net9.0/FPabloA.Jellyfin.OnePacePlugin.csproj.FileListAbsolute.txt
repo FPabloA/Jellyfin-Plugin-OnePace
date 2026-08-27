@@ -1,13 +1,13 @@
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.deps.json
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.dll
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.pdb
+D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.xml
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.csproj.AssemblyReference.cache
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.GeneratedMSBuildEditorConfig.editorconfig
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.AssemblyInfoInputs.cache
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.AssemblyInfo.cs
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.csproj.CoreCompileInputs.cache
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.sourcelink.json
-D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.deps.json
-D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.dll
-D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.pdb
-D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\bin\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.xml
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.dll
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\refint\FPabloA.Jellyfin.OnePacePlugin.dll
 D:\CodingProjects\Jellyfin Projects\Jellyfin-Plugin-OnePace\FPabloA.Jellyfin.OnePacePlugin\obj\Debug\net9.0\FPabloA.Jellyfin.OnePacePlugin.xml

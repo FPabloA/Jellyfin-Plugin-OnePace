@@ -3,6 +3,7 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<AssemblyName>FPabloA.Jellyfin.OnePacePlugin</AssemblyName>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup>

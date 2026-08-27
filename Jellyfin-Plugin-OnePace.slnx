@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="FPabloA.Jellyfin.OnePacePlugin.Tests/FPabloA.Jellyfin.OnePacePlugin.Tests.csproj" Id="d0252e2e-524a-44a4-b6f6-a9470d830d1d" />
+  <Project Path="FPabloA.Jellyfin.OnePacePlugin.Tests/FPabloA.Jellyfin.OnePacePlugin.Tests.csproj" Id="1b89e4d1-6311-43dc-9e6c-a992ef343609" />
   <Project Path="FPabloA.Jellyfin.OnePacePlugin/FPabloA.Jellyfin.OnePacePlugin.csproj" />
 </Solution>

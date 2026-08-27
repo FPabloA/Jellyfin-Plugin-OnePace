@@ -34,7 +34,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             var result = new MetadataResult<Season>();
 
-            var arcMatch = await ArcIdentifier.IdentifyAysnc(_repository, info, cancellationToken).ConfigureAwait(false);
+            var arcMatch = await ArcIdentifier.IdentifyAsync(_repository, info, cancellationToken).ConfigureAwait(false);
             if (arcMatch != null)
             {
                 result.HasMetadata = true;

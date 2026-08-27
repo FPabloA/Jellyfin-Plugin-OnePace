@@ -14,7 +14,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 {
     internal static class ArcIdentifier
     {
-        public static async Task<IArc?> IdentifyAysnc(
+        public static async Task<IArc?> IdentifyAsync(
             IRepository repository,
             ItemLookupInfo itemLookupInfo,
             CancellationToken cancellationToken)

@@ -108,7 +108,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             var itemLookupInfo = new ItemLookupInfo();
             itemLookupInfo.SetOnePaceId(id);
 
-            var arc = await ArcIdentifier.IdentifyAysnc(_repository, itemLookupInfo, CancellationToken.None);
+            var arc = await ArcIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
 
             Assert.NotNull(arc);
             Assert.Equal(expectedInvariantTitle, arc.InvariantTitle);
@@ -130,7 +130,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 Path = path
             };
 
-            var arc = await ArcIdentifier.IdentifyAysnc(_repository, itemLookupInfo, CancellationToken.None);
+            var arc = await ArcIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
 
             Assert.NotNull(arc);
             Assert.Equal(expectedInvariantTitle, arc.InvariantTitle);
@@ -147,7 +147,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 Path = path
             };
 
-            var arc = await ArcIdentifier.IdentifyAysnc(_repository, itemLookupInfo, CancellationToken.None);
+            var arc = await ArcIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
 
             Assert.NotNull(arc);
             Assert.Equal(expectedInvariantTitle, arc.InvariantTitle);
@@ -162,7 +162,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 Path = "/path/to/One Pace/Whiskey Peak"
             };
 
-            var arc = await ArcIdentifier.IdentifyAysnc(_repository, itemLookupInfo, CancellationToken.None);
+            var arc = await ArcIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
 
             Assert.NotNull(arc);
             Assert.Equal("Whisky Peak", arc.InvariantTitle);
@@ -177,7 +177,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 Path = null
             };
 
-            var arc = await ArcIdentifier.IdentifyAysnc(_repository, itemLookupInfo, CancellationToken.None);
+            var arc = await ArcIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
 
             Assert.Null(arc);
         }
