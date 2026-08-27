@@ -43,7 +43,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 {
                     if (episode.Crc32 != null)
                     {
-                        var pattern = $@"\b{episode.Crc32.Value:XB}\b";
+                        var pattern = $@"\b{episode.Crc32.Value:X8}\b";
                         if (Regex.IsMatch(fileName, pattern, RegexOptions.IgnoreCase))
                         {
                             return episode;
