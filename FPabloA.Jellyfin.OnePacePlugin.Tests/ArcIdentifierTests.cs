@@ -2,7 +2,6 @@
 using MediaBrowser.Controller.Providers;
 using Moq;
 using Xunit;
-using Assert = Xunit.Assert;
 
 namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 {
