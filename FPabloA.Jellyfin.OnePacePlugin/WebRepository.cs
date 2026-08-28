@@ -20,7 +20,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
     {
 
         private const string FallbackLanguageCode = "en";
-        //private static string _fallbackApiLanguageCode = ToApiLanguageCode(FallbackLanguageCode);
+        private static string _fallbackApiLanguageCode = ToApiLanguageCode(FallbackLanguageCode);
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IMemoryCache _memoryCache;
         private readonly ILogger<WebRepository> _log;
@@ -109,32 +109,59 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         }
 
         //Not implementing for now since Onepacerr does not use language codes
-        //private static string ToApiLanguageCode(string languageCode)
-        //{
-        //    if (languageCode.Equals("zh"))
-        //}
+        private static string ToApiLanguageCode(string languageCode)
+        {
+            if (languageCode.Equals("zh", StringComparison.OrdinalIgnoreCase))
+            {
+                return "zh_cn";
+            }
 
-        //private static string ToLanguageCode(string apiLanguageCode)
-        //{
+            return languageCode.Replace("-", "_", StringComparison.InvariantCultureIgnoreCase);
+        }
 
-        //}
+        private static string ToLanguageCode(string apiLanguageCode)
+        {
+            if (apiLanguageCode.Equals("zh_cn", StringComparison.OrdinalIgnoreCase))
+            {
+                return "zh";
+            }
 
-        //private static bool LanguageCodeEqual(string a, string b)
-        //{
+            return apiLanguageCode.Replace("_", "-", StringComparison.InvariantCultureIgnoreCase);
+        }
 
-        //}
+        private static bool LanguageCodesEqual(string a, string b)
+        {
+            return string.Equals(a, b, StringComparison.OrdinalIgnoreCase);
+        }
 
-        //private static JsonElement? ChooseBestApiTranslation(JsonElement.ArrayEnumerator apiCandidates, string apiLanguageCode)
-        //{
+        private static JsonElement? ChooseBestApiTranslation(JsonElement.ArrayEnumerator apiCandidates, string apiLanguageCode)
+        {
+            while (true)
+            {
+                foreach (var apiCandidate in apiCandidates)
+                {
+                    if (LanguageCodesEqual(apiCandidate.GetProperty("language_code").GetNonNullString(), apiLanguageCode))
+                    {
+                        return apiCandidate;
+                    }
+                }
 
-        //}
+                // Do we have anything to fall back on?
+                if (LanguageCodesEqual(apiLanguageCode, _fallbackApiLanguageCode))
+                {
+                    return null;
+                }
+
+                apiLanguageCode = _fallbackApiLanguageCode;
+            }
+        }
 
         private async Task<JsonElement?> FindApiArcByIdAsync(string id, CancellationToken cancellationToken)
         {
             try
             {
                 var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
-                return apiMetadata?.GetProperty("arc").EnumerateArray().FirstOrNull(apiArc =>
+                return apiMetadata?.GetProperty("arcs").EnumerateArray().FirstOrNull(apiArc =>
                     apiArc.GetProperty("id").GetNonNullString() == id);
             }
             catch (HttpRequestException)
@@ -278,21 +305,67 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return null;
         }
 
-        //One pacerr doesn't use language codes at all and only provides titles and descriptions in english, will return null for now
+        //One pacerr doesn't use language codes at all and only provides titles and descriptions in english, will need to rework this to just return en probably
 
         public async Task<ILocalization?> FindBestLocalizationBySeriesAsync(string languageCode, CancellationToken cancellationToken)
         {
-            return null;
+            try
+            {
+                var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
+                var apiSeries = apiMetadata?.GetProperty("series");
+
+                var bestApiTranslation = apiSeries != null
+                    ? ChooseBestApiTranslation(
+                        apiSeries.Value.GetProperty("translations").EnumerateArray(),
+                        ToApiLanguageCode(languageCode))
+                    : null;
+
+                return bestApiTranslation != null
+                    ? new RepositoryLocalization(bestApiTranslation.Value)
+                    : null;
+            }
+            catch (HttpRequestException)
+            {
+                // Details should have been logged further down the stack. We just treat this data as unavailable for now
+                // and the user can try again manually if they want.
+                return null;
+            }
         }
 
         public async Task<ILocalization?> FindBestLocalizationByArcIdAsync(string arcId, string languageCode, CancellationToken cancellationToken)
         {
+            var apiArc = await FindApiArcByIdAsync(arcId, cancellationToken).ConfigureAwait(false);
+            if (apiArc != null)
+            {
+                var bestApiTranslation = ChooseBestApiTranslation(
+                    apiArc.Value.GetProperty("translations").EnumerateArray(),
+                    ToApiLanguageCode(languageCode));
+
+                if (bestApiTranslation != null)
+                {
+                    return new RepositoryLocalization(bestApiTranslation.Value);
+                }
+            }
+
             return null;
         }
 
         public async Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken)
         {
-            return null;
+            var result = await FindApiEpisodeByIdAsync(episodeId, cancellationToken)
+            .ConfigureAwait(false);
+            if (result == null)
+            {
+                return null;
+            }
+
+            var apiTranslation = ChooseBestApiTranslation(
+                result.Value.ApiEpisode.GetProperty("translations").EnumerateArray(),
+                ToApiLanguageCode(languageCode));
+
+            return apiTranslation != null
+                ? new RepositoryLocalization(apiTranslation.Value)
+                : null;
         }
 
         private static DateTime? ParseReleaseDate(JsonElement jsonElement)
@@ -383,10 +456,21 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 
         //This needs to be reworked since one pacerr doesnt use language codes
 
-        //private sealed class RepositoryLocalization : ILocalization
-        //{
+        private sealed class RepositoryLocalization : ILocalization
+        {
+            public RepositoryLocalization(JsonElement apiTranslation)
+            {
+                LanguageCode = ToLanguageCode(apiTranslation.GetProperty("language_code").GetNonNullString());
+                Title = apiTranslation.GetProperty("title").GetNonNullString();
+                Description = apiTranslation.GetProperty("description").GetString();
+            }
 
-        //}
+            public string LanguageCode { get; }
 
-    }
+            public string Title { get; }
+
+            public string? Description { get; }
+        }
+
+}
 }
