@@ -399,7 +399,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 Id = apiArc.GetProperty("id").GetNonNullString();
                 Rank = apiArc.GetProperty("part").GetInt32();
                 InvariantTitle = apiArc.GetProperty("title").GetNonNullString();
-                MangaChapters = apiArc.GetProperty("manga_chapters").GetString();
+                MangaChapters = apiArc.GetProperty("mangaChapters").GetString();
                 ReleaseDate = ParseReleaseDate(apiArc.GetProperty("released_at"));
             }
 

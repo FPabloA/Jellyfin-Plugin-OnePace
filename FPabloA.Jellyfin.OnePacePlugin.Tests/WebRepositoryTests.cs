@@ -35,31 +35,13 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "id": "clksypeix000008jw066ye7lo",
                             "part": 1,
                             "title": "Romance Dawn",
-                            "manga_chapters": "1-7",
+                            "mangaChapters": "1 - 7",
                             "released_at": "2020-12-02T12:00:00Z",
                             "translations": [
                                 {
                                     "title": "Romance Dawn en",
                                     "description": "English description for Romance Dawn",
                                     "language_code": "en"
-                                }
-                            ],
-                            "images": [
-                                {
-                                    "src": "cover-romance-dawn-arc_270w.jpg",
-                                    "width": "270"
-                                },
-                                {
-                                    "src": "cover-romance-dawn-arc_135w.webp",
-                                    "width": "135"
-                                },
-                                {
-                                    "src": "cover-romance-dawn-arc_270w.webp",
-                                    "width": "270"
-                                },
-                                {
-                                    "src": "cover-romance-dawn-arc_405w.webp",
-                                    "width": "405"
                                 }
                             ],
                             "episodes": [
@@ -139,7 +121,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "id": "clksyq4q5000108jwgihd6jud",
                             "part": 2,
                             "title": "Orange Town",
-                            "manga_chapters": "8-21",
+                            "mangaChapters": "8-21",
                             "released_at": "2021-08-07T12:00:00Z",
                             "translations": [
                                 {
@@ -151,12 +133,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     "title": "Orange Town en",
                                     "description": "English description for Orange Town",
                                     "language_code": "en"
-                                }
-                            ],
-                            "images": [
-                                {
-                                    "src": "cover-orange-town-arc_270w.jpg",
-                                    "width": "270"
                                 }
                             ],
                             "episodes": [
