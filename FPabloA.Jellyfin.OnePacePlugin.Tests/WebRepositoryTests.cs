@@ -62,7 +62,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                             "description": "English description for Romance Dawn 01",
                                             "language_code": "en"
                                         }
-                                    ]
+                                    ],
                                 },
                                 {
                                     "id": "clksys3c2000308jwa08325o7",

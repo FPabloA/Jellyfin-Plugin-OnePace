@@ -19,7 +19,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
             public string? MangaChapters { get; init; }
 
-            public DateTime? ReleaseDate { get; init; }
+            //public DateTime? ReleaseDate { get; init; }
         }
 
         public ArcIdentifierTests()
@@ -32,7 +32,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 1,
                     InvariantTitle = "Romance Dawn",
                     MangaChapters = "1-7",
-                    ReleaseDate = null
+                    //ReleaseDate = null
                 },
 
                 new TestArc
@@ -41,7 +41,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 2,
                     InvariantTitle = "Orange Town",
                     MangaChapters = "8-21",
-                    ReleaseDate = null
+                    //ReleaseDate = null
                 },
 
                 new TestArc
@@ -50,7 +50,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 3,
                     InvariantTitle = "Syrup Village",
                     MangaChapters = null,
-                    ReleaseDate = null
+                    //ReleaseDate = null
                 },
 
                 new TestArc
@@ -59,7 +59,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 10,
                     InvariantTitle = "Whisky Peak",
                     MangaChapters = null,
-                    ReleaseDate = null
+                    //ReleaseDate = null
                 },
 
                 new TestArc
@@ -68,7 +68,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 19,
                     InvariantTitle = "Enies Lobby",
                     MangaChapters = null,
-                    ReleaseDate = null
+                    //ReleaseDate = null
                 },
 
                 new TestArc
@@ -77,7 +77,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 20,
                     InvariantTitle = "Post-Enies Lobby",
                     MangaChapters = null,
-                    ReleaseDate = null
+                    //ReleaseDate = null
                 }
             };
 
