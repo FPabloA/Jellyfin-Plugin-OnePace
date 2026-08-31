@@ -36,8 +36,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             return await _memoryCache.GetOrCreateAsync(query, async cacheEntry =>
             {
-                //TODO: Change this to onepacerr API
-                var request = new HttpRequestMessage(HttpMethod.Post, "https://onepace.net/api/graphql");
+                //TODO: still need to change the content portion probably, and this will just be an http get, not graphql query
+                var request = new HttpRequestMessage(HttpMethod.Post, "https://onepacerr.com/api/v1/metadata");
                 request.Content = new StringContent(
                     JsonSerializer.Serialize(new
                     {
@@ -397,7 +397,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             public RepositoryArc(JsonElement apiArc)
             {
                 Id = apiArc.GetProperty("id").GetNonNullString();
-                Rank = apiArc.GetProperty("part").GetInt32();
+                Rank = apiArc.GetProperty("arc").GetInt32();
                 InvariantTitle = apiArc.GetProperty("title").GetNonNullString();
                 MangaChapters = apiArc.GetProperty("mangaChapters").GetString();
                 ReleaseDate = ParseReleaseDate(apiArc.GetProperty("released_at"));

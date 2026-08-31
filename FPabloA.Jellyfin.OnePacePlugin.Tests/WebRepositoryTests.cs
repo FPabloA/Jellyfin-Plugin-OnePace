@@ -33,7 +33,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     "arcs": [
                         {
                             "id": "clksypeix000008jw066ye7lo",
-                            "part": 1,
+                            "arc": 1,
                             "title": "Romance Dawn",
                             "mangaChapters": "1 - 7",
                             "released_at": "2020-12-02T12:00:00Z",
@@ -119,7 +119,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                         },
                         {
                             "id": "clksyq4q5000108jwgihd6jud",
-                            "part": 2,
+                            "arc": 2,
                             "title": "Orange Town",
                             "mangaChapters": "8-21",
                             "released_at": "2021-08-07T12:00:00Z",
@@ -187,7 +187,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     //TODO: change uri to onepacerr
                     if (request.RequestUri != null &&
                         request.Method == HttpMethod.Post &&
-                        request.RequestUri.AbsoluteUri == "https://onepace.net/api/graphql" &&
+                        request.RequestUri.AbsoluteUri == "https://onepacerr.com/api/v1/metadata" &&
                         request.Content != null)
                     {
                         var requestContent = request.Content.ReadAsStringAsync(cancellationToken).Result;
