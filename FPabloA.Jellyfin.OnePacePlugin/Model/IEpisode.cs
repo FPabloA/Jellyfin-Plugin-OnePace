@@ -12,8 +12,12 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
         //Gets the CUID for the Episode (might not be relevant anymore, unless this is for jellyfin purposes and not one pace)
         string Id { get; }
 
-        //Gets the CUID of the arc that the episode belongs to (if the arc CUID is not relevant, then this will be removed too)
-        string ArcId { get; }
+        ////Gets the CUID of the arc that the episode belongs to (if the arc CUID is not relevant, then this will be removed too)
+        //TODO: Clearing ArcId stuff
+        //string ArcId { get; }
+
+        //Gets the arc number that the episode belongs to
+        string ArcNum { get; }
 
         //Gets the rank/order of the episode within the arc
         int Rank { get; }

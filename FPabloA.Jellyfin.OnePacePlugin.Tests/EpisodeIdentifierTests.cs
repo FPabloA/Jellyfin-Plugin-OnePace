@@ -15,7 +15,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
             public int Rank { get; init; }
 
-            public string ArcId { get; init; }
+            //TODO: Clearing stuff with arcID
+            //public string ArcId { get; init; }
+
+            public string ArcNum { get; init; }
 
             public string InvariantTitle { get; init; } = null!;
 
@@ -34,7 +37,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     Id = "clkso9n2a000008jkdjxn6acj",
                     Rank = 1,
-                    ArcId = "clksod80d000408jkbahl6yqa",
+                    //TODO: Clearing stuff with arcID
+                    //ArcId = "clksod80d000408jkbahl6yqa",
                     InvariantTitle = "Romance Dawn 01",
                     MangaChapters = "1",
                     ReleaseDate = null,
@@ -45,7 +49,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     Id = "clkso9t8u000108jk5lbu2409",
                     Rank = 2,
-                    ArcId = "clksodbar000508jk9wkz0y2n",
+                    //TODO: Clearing stuff with arcID
+                    //ArcId = "clksodbar000508jk9wkz0y2n",
                     InvariantTitle = "Romance Dawn 02",
                     MangaChapters = "2",
                     ReleaseDate = null,
@@ -56,7 +61,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     Id = "clkso9z6n000208jk069u63ih",
                     Rank = 1,
-                    ArcId = "clksode6a000608jkfm0m77m3",
+                    //TODO: Clearing stuff with arcID
+                    //ArcId = "clksode6a000608jkfm0m77m3",
                     InvariantTitle = "Orange Town 01",
                     MangaChapters = "8-11",
                     ReleaseDate = null,
@@ -67,7 +73,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     Id = "clksoa57k000308jkb3cu73n8",
                     Rank = 2,
-                    ArcId = "clksodhex000708jk7bak1tml",
+                    //TODO: Clearing stuff with arcID
+                    //ArcId = "clksodhex000708jk7bak1tml",
                     InvariantTitle = "Orange Town 02",
                     MangaChapters = null,
                     ReleaseDate = null,
@@ -78,7 +85,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     Id = "clqgsm6a403yjnv5cw3owwctw",
                     Rank = 1,
-                    ArcId = "clqgslsp8006pnv5c08glvvjm",
+                    //TODO: Clearing stuff with arcID
+                    //ArcId = "clqgslsp8006pnv5c08glvvjm",
                     InvariantTitle = "Whisky Peak 01",
                     MangaChapters = null,
                     ReleaseDate = null,
@@ -89,7 +97,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     Id = "clqgsm60g03vvnv5cvf2afpq8",
                     Rank = 1,
-                    ArcId = "clqgslt5n00bwnv5cj0e4wb0i",
+                    //TODO: Clearing stuff with arcID
+                    //ArcId = "clqgslt5n00bwnv5cj0e4wb0i",
                     InvariantTitle = "Enies Lobby 01",
                     MangaChapters = null,
                     ReleaseDate = null,
@@ -100,7 +109,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     Id = "clqgslvmk011bnv5cvl0khvob",
                     Rank = 1,
-                    ArcId = "clqgslt7v00cjnv5cg8eumgzc",
+                    //TODO: Clearing stuff with arcID
+                    //ArcId = "clqgslt7v00cjnv5cg8eumgzc",
                     InvariantTitle = "Post-Enies Lobby 01",
                     MangaChapters = null,
                     ReleaseDate = null,

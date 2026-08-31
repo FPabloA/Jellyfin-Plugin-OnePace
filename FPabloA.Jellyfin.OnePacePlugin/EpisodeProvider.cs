@@ -41,7 +41,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             var episodeMatch = await EpisodeIdentifier.IdentifyAsync(_repository, info, cancellationToken).ConfigureAwait(false);
             if (episodeMatch != null)
             {
-                var arc = await _repository.FindArcByIdAsync(episodeMatch.ArcId, cancellationToken).ConfigureAwait(false);
+                //var arc = await _repository.FindArcByIdAsync(episodeMatch.ArcId, cancellationToken).ConfigureAwait(false);
+                //TODO: need to make a findArc by arc number method instead of id
+                var arc = await _repository.FindArcByNumberAsync(episodeMatch.ArcNum, cancellationToken).ConfigureAwait(false); ;
                 if (arc != null)
                 {
                     result.HasMetadata = true;
@@ -73,7 +75,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 }
                 else
                 {
-                    _log.LogError("Could not find arc {ArcId}", episodeMatch.ArcId);
+                    _log.LogError("Could not find arc {ArcId}", episodeMatch.ArcNum);
                 }
 
             }

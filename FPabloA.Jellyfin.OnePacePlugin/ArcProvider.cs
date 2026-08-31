@@ -53,14 +53,14 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 //TODO:removing ArcID stuff
                 //result.Item.SetOnePaceId(arcMatch.Id);
 
-                var localization = await _repository
-                    .FindBestLocalizationByArcIdAsync(arcMatch.Id, info.MetadataLanguage ?? "en", cancellationToken)
-                    .ConfigureAwait(false);
-                if (localization != null)
-                {
-                    result.Item.Name = localization.Title;
-                    result.Item.Overview = localization.Description;
-                }
+                //var localization = await _repository
+                //    .FindBestLocalizationByArcIdAsync(arcMatch.Id, info.MetadataLanguage ?? "en", cancellationToken)
+                //    .ConfigureAwait(false);
+                //if (localization != null)
+                //{
+                //    result.Item.Name = localization.Title;
+                //    result.Item.Overview = localization.Description;
+                //}
             }
 
             _log.LogInformation(

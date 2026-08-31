@@ -157,13 +157,29 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             }
         }
 
-        private async Task<JsonElement?> FindApiArcByIdAsync(string id, CancellationToken cancellationToken)
+        //TODO:Clearing stuff to do with arcID
+        //private async Task<JsonElement?> FindApiArcByIdAsync(string id, CancellationToken cancellationToken)
+        //{
+        //    try
+        //    {
+        //        var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
+        //        return apiMetadata?.GetProperty("arcs").EnumerateArray().FirstOrNull(apiArc =>
+        //            apiArc.GetProperty("id").GetNonNullString() == id);
+        //    }
+        //    catch (HttpRequestException)
+        //    {
+        //        //Details should be logged futher down the stack. just treat the data as unavailable
+        //        return null;
+        //    }
+        //}
+
+        private async Task<JsonElement?> FindApiArcByNumberAsync(string arcNum, CancellationToken cancellationToken)
         {
             try
             {
                 var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
                 return apiMetadata?.GetProperty("arcs").EnumerateArray().FirstOrNull(apiArc =>
-                    apiArc.GetProperty("id").GetNonNullString() == id);
+                    apiArc.GetProperty("arc").GetNonNullString() == arcNum);
             }
             catch (HttpRequestException)
             {
@@ -240,10 +256,21 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return results;
         }
 
-        public async Task<IArc?> FindArcByIdAsync(string id, CancellationToken cancellationToken)
+        //TODO:Clearing stuff to do with arcID
+        //public async Task<IArc?> FindArcByIdAsync(string id, CancellationToken cancellationToken)
+        //{
+
+        //    var apiArc = await FindApiArcByIdAsync(id, cancellationToken).ConfigureAwait(false);
+        //    return apiArc != null
+        //        ? new RepositoryArc(apiArc.Value)
+        //        : null;
+
+        //}
+
+        public async Task<IArc?> FindArcByNumberAsync(string arcNum, CancellationToken cancellationToken)
         {
 
-            var apiArc = await FindApiArcByIdAsync(id, cancellationToken).ConfigureAwait(false);
+            var apiArc = await FindApiArcByNumberAsync(arcNum, cancellationToken).ConfigureAwait(false);
             return apiArc != null
                 ? new RepositoryArc(apiArc.Value)
                 : null;
@@ -333,23 +360,24 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             }
         }
 
-        public async Task<ILocalization?> FindBestLocalizationByArcIdAsync(string arcId, string languageCode, CancellationToken cancellationToken)
-        {
-            var apiArc = await FindApiArcByIdAsync(arcId, cancellationToken).ConfigureAwait(false);
-            if (apiArc != null)
-            {
-                var bestApiTranslation = ChooseBestApiTranslation(
-                    apiArc.Value.GetProperty("translations").EnumerateArray(),
-                    ToApiLanguageCode(languageCode));
+        //TODO:Clearing stuff to do with arcID
+        //public async Task<ILocalization?> FindBestLocalizationByArcIdAsync(string arcId, string languageCode, CancellationToken cancellationToken)
+        //{
+        //    var apiArc = await FindApiArcByIdAsync(arcId, cancellationToken).ConfigureAwait(false);
+        //    if (apiArc != null)
+        //    {
+        //        var bestApiTranslation = ChooseBestApiTranslation(
+        //            apiArc.Value.GetProperty("translations").EnumerateArray(),
+        //            ToApiLanguageCode(languageCode));
 
-                if (bestApiTranslation != null)
-                {
-                    return new RepositoryLocalization(bestApiTranslation.Value);
-                }
-            }
+        //        if (bestApiTranslation != null)
+        //        {
+        //            return new RepositoryLocalization(bestApiTranslation.Value);
+        //        }
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
         public async Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken)
         {
@@ -420,11 +448,13 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 
         private sealed class RepositoryEpisode : IEpisode
         {
-            public RepositoryEpisode(string arcId, JsonElement apiEpisode)
+            public RepositoryEpisode(string arcNum, JsonElement apiEpisode)
             {
                 Id = apiEpisode.GetProperty("id").GetNonNullString();
                 Rank = apiEpisode.GetProperty("episode").GetInt32();
-                ArcId = ArcId;
+                //TODO: Clearing stuff with arcID
+                //ArcId = ArcId;
+                ArcNum = arcNum;
                 InvariantTitle = apiEpisode.GetProperty("title").GetNonNullString();
                 MangaChapters = apiEpisode.GetProperty("mangaChapters").GetString();
                 ReleaseDate = ParseReleaseDate(apiEpisode.GetProperty("released"));
@@ -447,7 +477,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 
             public int Rank { get; }
 
-            public string ArcId { get; }
+            //TODO: Clearing stuff with arcID
+            //public string ArcId { get; }
+
+            public string ArcNum { get; }
 
             public string InvariantTitle { get; }
 

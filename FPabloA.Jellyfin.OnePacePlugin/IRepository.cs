@@ -15,7 +15,11 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         Task<IReadOnlyCollection<IArc>> FindAllArcsAsync(CancellationToken cancellationToken);
 
         //Retrieves the arc model based on the ID (not sure if this is relevant since onepacerr has no id field for arcs)
-        Task<IArc?> FindArcByIdAsync(string id, CancellationToken cancellationToken);
+        //TODO:Clearing stuff to do with arcID
+        //Task<IArc?> FindArcByIdAsync(string id, CancellationToken cancellationToken);
+
+        //Retrieves the arc model based on the arc number
+        Task<IArc?> FindArcByNumberAsync(string arcNum, CancellationToken cancellationToken);
 
         //Retrieves the models for all known episodes. Read-Only (not sure how this is used yet)
         Task<IReadOnlyCollection<IEpisode>> FindAllEpisodesAsync(CancellationToken cancellationToken);
@@ -30,7 +34,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         Task<IReadOnlyCollection<IArt>> FindAllCoverArtBySeriesAsync(CancellationToken cancellationToken);
 
         //Retrieves the available arc cover art (probably not relevant since onepacerr does not provide image info, or use arc IDs)
-        Task<IReadOnlyCollection<IArt>> FindAllCoverArtByArcIdAsync(string arcId, CancellationToken cancellationToken);
+        //TODO:Clearing stuff to do with arcID
+        //Task<IReadOnlyCollection<IArt>> FindAllCoverArtByArcIdAsync(string arcId, CancellationToken cancellationToken);
 
         //Retrieves the available episode cover art (probably not relevant since onepacerr does not provide image info, or use arc IDs)
         Task<IReadOnlyCollection<IArt>> FindAllCoverArtByEpisodeIdAsync(string episodeId, CancellationToken cancellationToken);
@@ -39,7 +44,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         Task<ILocalization?> FindBestLocalizationBySeriesAsync(string languageCode, CancellationToken cancellationToken);
 
         //Retrieves the arc localization data (might not be relevant since onepacerr appears to only provide description and title info in one language)
-        Task<ILocalization?> FindBestLocalizationByArcIdAsync(string arcId, string languageCode, CancellationToken cancellationToken);
+        //TODO:Clearing stuff to do with arcID
+        //Task<ILocalization?> FindBestLocalizationByArcIdAsync(string arcId, string languageCode, CancellationToken cancellationToken);
 
         //Retrieves the episode localization data (might not be relevant since onepacerr appears to only provide description and title info in one language)
         Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken);

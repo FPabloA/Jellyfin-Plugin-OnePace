@@ -217,16 +217,16 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 episode => Assert.Equal("Orange Town 01", episode.InvariantTitle));
         }
 
-        [Theory]
-        [InlineData("clksypeix000008jw066ye7lo", "Romance Dawn")]
-        [InlineData("clksyq4q5000108jwgihd6jud", "Orange Town")]
-        public async Task ShouldFindArcById(string arcId, string expectedInvariantTitle)
-        {
-            var result = await _webRepository.FindArcByIdAsync(arcId, CancellationToken.None);
+        //[Theory]
+        //[InlineData("clksypeix000008jw066ye7lo", "Romance Dawn")]
+        //[InlineData("clksyq4q5000108jwgihd6jud", "Orange Town")]
+        //public async Task ShouldFindArcById(string arcId, string expectedInvariantTitle)
+        //{
+        //    var result = await _webRepository.FindArcByIdAsync(arcId, CancellationToken.None);
 
-            Assert.NotNull(result);
-            Assert.Equal(expectedInvariantTitle, result.InvariantTitle);
-        }
+        //    Assert.NotNull(result);
+        //    Assert.Equal(expectedInvariantTitle, result.InvariantTitle);
+        //}
 
         [Theory]
         [InlineData("clksyqwxl000208jw82wh3y0g", "Romance Dawn 01")]
@@ -268,23 +268,24 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         }
 
         //TODO: Same as above
-        [Theory]
-        [InlineData("clksypeix000008jw066ye7lo", "en", "Romance Dawn en", "English description for Romance Dawn")]
-        [InlineData("clksyq4q5000108jwgihd6jud", "en", "Orange Town en", "English description for Orange Town")]
-        [InlineData("clksyq4q5000108jwgihd6jud", "de", "Orange Town de", "Deutsche Beschreibung für Orange Town")]
-        [InlineData("clksyq4q5000108jwgihd6jud", "invalid", "Orange Town en", "English description for Orange Town")]
-        public async Task ShouldFindBestArcLocalization(
-            string arcId,
-            string languageCode,
-            string expectedTitle,
-            string expectedDescription)
-        {
-            var result = await _webRepository.FindBestLocalizationByArcIdAsync(arcId, languageCode, CancellationToken.None);
+        //TODO:Clearing stuff to do with arcID
+        //[Theory]
+        //[InlineData("clksypeix000008jw066ye7lo", "en", "Romance Dawn en", "English description for Romance Dawn")]
+        //[InlineData("clksyq4q5000108jwgihd6jud", "en", "Orange Town en", "English description for Orange Town")]
+        //[InlineData("clksyq4q5000108jwgihd6jud", "de", "Orange Town de", "Deutsche Beschreibung für Orange Town")]
+        //[InlineData("clksyq4q5000108jwgihd6jud", "invalid", "Orange Town en", "English description for Orange Town")]
+        //public async Task ShouldFindBestArcLocalization(
+        //    string arcId,
+        //    string languageCode,
+        //    string expectedTitle,
+        //    string expectedDescription)
+        //{
+        //    var result = await _webRepository.FindBestLocalizationByArcIdAsync(arcId, languageCode, CancellationToken.None);
 
-            Assert.NotNull(result);
-            Assert.Equal(expectedTitle, result.Title);
-            Assert.Equal(expectedDescription, result.Description);
-        }
+        //    Assert.NotNull(result);
+        //    Assert.Equal(expectedTitle, result.Title);
+        //    Assert.Equal(expectedDescription, result.Description);
+        //}
 
         //TODO: Same as above
         [Theory]
