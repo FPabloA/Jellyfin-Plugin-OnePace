@@ -11,7 +11,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
         private class TestArc : IArc
         {
-            public string Id { get; init; } = null!;
+            //TODO: Clearing stuff with arcID
+            //public string Id { get; init; } = null!;
 
             public int Rank { get; init; }
 
@@ -30,7 +31,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             {
                 new TestArc
                 {
-                    Id = "clkso3n3l000008l751pk86u4",
+                    //TODO: Clearing stuff with arcID
+                    //Id = "clkso3n3l000008l751pk86u4",
                     Rank = 1,
                     InvariantTitle = "Romance Dawn",
                     MangaChapters = "1-7",
@@ -39,7 +41,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestArc
                 {
-                    Id = "clkso3uwi000108l724rj9vc0",
+                    //TODO: Clearing stuff with arcID
+                    //Id = "clkso3uwi000108l724rj9vc0",
                     Rank = 2,
                     InvariantTitle = "Orange Town",
                     MangaChapters = "8-21",
@@ -48,7 +51,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestArc
                 {
-                    Id = "clkso3zi6000208l7bhq7dtn6",
+                    //TODO: Clearing stuff with arcID
+                    //Id = "clkso3zi6000208l7bhq7dtn6",
                     Rank = 3,
                     InvariantTitle = "Syrup Village",
                     MangaChapters = null,
@@ -57,7 +61,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestArc
                 {
-                    Id = "clqgslsp8006pnv5c08glvvjm",
+                    //TODO: Clearing stuff with arcID
+                    //Id = "clqgslsp8006pnv5c08glvvjm",
                     Rank = 10,
                     InvariantTitle = "Whisky Peak",
                     MangaChapters = null,
@@ -66,7 +71,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestArc
                 {
-                    Id = "clqgslt5n00bwnv5cj0e4wb0i",
+                    //TODO: Clearing stuff with arcID
+                    //Id = "clqgslt5n00bwnv5cj0e4wb0i",
                     Rank = 19,
                     InvariantTitle = "Enies Lobby",
                     MangaChapters = null,
@@ -75,7 +81,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestArc
                 {
-                    Id = "clqgslt7v00cjnv5cg8eumgzc",
+                    //TODO: Clearing stuff with arcID
+                    //Id = "clqgslt7v00cjnv5cg8eumgzc",
                     Rank = 20,
                     InvariantTitle = "Post-Enies Lobby",
                     MangaChapters = null,

@@ -425,7 +425,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             public RepositoryArc(JsonElement apiArc)
             {
-                Id = apiArc.GetProperty("id").GetNonNullString();
+                //TODO: Clearing stuff with arcID
+                //Id = apiArc.GetProperty("id").GetNonNullString();
                 Rank = apiArc.GetProperty("arc").GetInt32();
                 InvariantTitle = apiArc.GetProperty("title").GetNonNullString();
                 MangaChapters = apiArc.GetProperty("mangaChapters").GetString();
@@ -433,7 +434,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 //ReleaseDate = ParseReleaseDate(apiArc.GetProperty("released_at"));
             }
 
-            public string Id { get; }
+            //TODO: Clearing stuff with arcID
+            //public string Id { get; }
 
             public int Rank { get; }
 
