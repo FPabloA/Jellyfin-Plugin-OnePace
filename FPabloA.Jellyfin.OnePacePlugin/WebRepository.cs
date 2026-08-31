@@ -68,7 +68,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                     {
                         cacheEntry.AbsoluteExpiration = DateTimeOffset.MinValue;
                     }
-            
+
                 }
 
                 var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
@@ -173,7 +173,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 
         private async Task<(string ArcId, JsonElement ApiEpisode)?> FindApiEpisodeByIdAsync(string id, CancellationToken cancellationToken)
         {
-            
+
             try
             {
                 var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
@@ -398,7 +398,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             {
                 Id = apiArc.GetProperty("id").GetNonNullString();
                 Rank = apiArc.GetProperty("part").GetInt32();
-                InvariantTitle = apiArc.GetProperty("invariant_title").GetNonNullString();
+                InvariantTitle = apiArc.GetProperty("title").GetNonNullString();
                 MangaChapters = apiArc.GetProperty("manga_chapters").GetString();
                 ReleaseDate = ParseReleaseDate(apiArc.GetProperty("released_at"));
             }
@@ -472,5 +472,5 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             public string? Description { get; }
         }
 
-}
+    }
 }
