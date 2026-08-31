@@ -7,7 +7,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
     {
         //Gets the CUID for the Arc (might not be relevant anymore, unless this is for jellyfin purposes and not one pace)
         string Id { get; }
-        
+
         //Gets the rank/order of the arc within the series
         int Rank { get; }
 
