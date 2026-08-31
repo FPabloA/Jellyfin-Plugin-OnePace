@@ -62,20 +62,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                             "description": "English description for Romance Dawn 01",
                                             "language_code": "en"
                                         }
-                                    ],
-                                    "images": [
-                                        {
-                                            "src": "cover-romance-dawn-01_480w.jpg",
-                                            "width": "480"
-                                        },
-                                        {
-                                            "src": "cover-romance-dawn-01_240w.webp",
-                                            "width": "240"
-                                        },
-                                        {
-                                            "src": "cover-romance-dawn-01_480w.webp",
-                                            "width": "480"
-                                        }
                                     ]
                                 },
                                 {
@@ -96,12 +82,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                             "description": "English description for Romance Dawn 02",
                                             "language_code": "en"
                                         }
-                                    ],
-                                    "images": [
-                                        {
-                                            "src": "cover-romance-dawn-02_480w.jpg",
-                                            "width": "480"
-                                        }
                                     ]
                                 },
                                 {
@@ -111,8 +91,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     "mangaChapters": null,
                                     "released": null,
                                     "crc32": null,
-                                    "translations": [],
-                                    "images": []
+                                    "translations": []
                                 }
                             ]
                         },
@@ -151,16 +130,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                             "title": "Orange Town 01 en",
                                             "description": "English description for Orange Town 01",
                                             "language_code": "en"
-                                        }
-                                    ],
-                                    "images": [
-                                        {
-                                            "src": "cover-orange-town-01_480w.jpg",
-                                            "width": "480"
-                                        },
-                                        {
-                                            "src": "cover-orange-town-01_240w.webp",
-                                            "width": "240"
                                         }
                                     ]
                                 }
