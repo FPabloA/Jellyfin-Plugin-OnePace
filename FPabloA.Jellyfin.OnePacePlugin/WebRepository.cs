@@ -206,7 +206,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 
                     if (matchingEpisode != null)
                     {
-                        return (apiArc.GetProperty("id").GetNonNullString(), matchingEpisode.Value);
+                        return (apiArc.GetProperty("arc").ToString(), matchingEpisode.Value);
                     }
                 }
                 return null;
@@ -289,7 +289,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                     results.AddRange(
                         from apiArc in apiMetadata.Value.GetProperty("arcs").EnumerateArray()
                         from apiEpisode in apiArc.GetProperty("episodes").EnumerateArray()
-                        select new RepositoryEpisode(apiArc.GetProperty("id").GetNonNullString(), apiEpisode));
+                        select new RepositoryEpisode(apiArc.GetProperty("arc").ToString(), apiEpisode));
                 }
             }
             catch

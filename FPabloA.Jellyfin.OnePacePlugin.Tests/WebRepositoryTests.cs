@@ -32,7 +32,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                     "arcs": [
                         {
-                            "id": "clksypeix000008jw066ye7lo",
                             "arc": 1,
                             "title": "Romance Dawn",
                             "mangaChapters": "1 - 7",
@@ -97,7 +96,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             ]
                         },
                         {
-                            "id": "clksyq4q5000108jwgihd6jud",
                             "arc": 2,
                             "title": "Orange Town",
                             "mangaChapters": "8-21",
