@@ -17,6 +17,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
         //Gets the manga chapters being covered by the arc. Null if Unknown, or if Arc is Anime-Only
         string? MangaChapters { get; }
 
+        //Gets the english description for the arc
+        string Description { get; }
+
         //Gets the release date of the arc. Null if release date is unknown, or otherwise unavailable (might not be provided by onepacerr API, could remove)
         //DateTime? ReleaseDate { get; }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Net;
@@ -400,6 +401,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 Rank = apiArc.GetProperty("arc").GetInt32();
                 InvariantTitle = apiArc.GetProperty("title").GetNonNullString();
                 MangaChapters = apiArc.GetProperty("mangaChapters").GetString();
+                Description = apiArc.GetProperty("description").GetString();
                 //ReleaseDate = ParseReleaseDate(apiArc.GetProperty("released_at"));
             }
 
@@ -410,6 +412,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             public string InvariantTitle { get; }
 
             public string? MangaChapters { get; }
+
+            public string Description { get; }
 
             //public DateTime? ReleaseDate { get; }
         }

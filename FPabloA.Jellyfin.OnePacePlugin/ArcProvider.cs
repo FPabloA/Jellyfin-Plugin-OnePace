@@ -43,13 +43,15 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 result.Item = new Season
                 {
                     IndexNumber = arcMatch.Rank,
-                    Name = arcMatch.InvariantTitle
+                    Name = arcMatch.InvariantTitle,
+                    Overview = arcMatch.Description
                     //Pretty sure these will not be provided by one pacerr API
                     //PremierDate = arcMatch.ReleaseDate
                     //ProductionYear = arcMatch.ReleaseDate?.Year
                 };
 
-                result.Item.SetOnePaceId(arcMatch.Id);
+                //TODO:removing ArcID stuff
+                //result.Item.SetOnePaceId(arcMatch.Id);
 
                 var localization = await _repository
                     .FindBestLocalizationByArcIdAsync(arcMatch.Id, info.MetadataLanguage ?? "en", cancellationToken)

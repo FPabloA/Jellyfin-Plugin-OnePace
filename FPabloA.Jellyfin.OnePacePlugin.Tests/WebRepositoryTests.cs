@@ -36,6 +36,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "arc": 1,
                             "title": "Romance Dawn",
                             "mangaChapters": "1 - 7",
+                            "description": "Monkey D. Luffy sets out on an adventure to form a crew, find the legendary One Piece, and become the pirate king.",
                             "translations": [
                                 {
                                     "title": "Romance Dawn en",
@@ -100,6 +101,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "arc": 2,
                             "title": "Orange Town",
                             "mangaChapters": "8-21",
+                            "description": "Luffy and Zoro run afoul of a flashy crew of pirates and their captain, Buggy the Clown. They are joined by a young girl named Nami who helps them navigate this predicament.",
                             "translations": [
                                 {
                                     "title": "Orange Town de",

@@ -19,6 +19,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
             public string? MangaChapters { get; init; }
 
+            public string Description { get; init; } = null!;
+
             //public DateTime? ReleaseDate { get; init; }
         }
 
