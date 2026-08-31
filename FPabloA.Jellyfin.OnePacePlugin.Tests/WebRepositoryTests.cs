@@ -36,7 +36,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "arc": 1,
                             "title": "Romance Dawn",
                             "mangaChapters": "1 - 7",
-                            "released_at": "2020-12-02T12:00:00Z",
                             "translations": [
                                 {
                                     "title": "Romance Dawn en",
@@ -47,10 +46,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "episodes": [
                                 {
                                     "id": "clksyqwxl000208jw82wh3y0g",
-                                    "part": 1,
-                                    "invariant_title": "Romance Dawn 01",
-                                    "manga_chapters": "1",
-                                    "released_at": "2020-12-02T12:00:00Z",
+                                    "episode": 1,
+                                    "title": "Romance Dawn 01",
+                                    "mangaChapters": "1",
+                                    "released": "2020-12-02T12:00:00Z",
                                     "crc32": "11000000",
                                     "translations": [
                                         {
@@ -81,10 +80,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                 },
                                 {
                                     "id": "clksys3c2000308jwa08325o7",
-                                    "part": 2,
-                                    "invariant_title": "Romance Dawn 02",
-                                    "manga_chapters": "2",
-                                    "released_at": "2020-12-02T12:00:00Z",
+                                    "episode": 2,
+                                    "title": "Romance Dawn 02",
+                                    "mangaChapters": "2",
+                                    "released": "2020-12-02T12:00:00Z",
                                     "crc32": "12000000",
                                     "translations": [
                                         {
@@ -107,10 +106,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                 },
                                 {
                                     "id": "clksysvim000408jw6anzden8",
-                                    "part": 3,
-                                    "invariant_title": "Romance Dawn 03",
-                                    "manga_chapters": null,
-                                    "released_at": null,
+                                    "episode": 3,
+                                    "title": "Romance Dawn 03",
+                                    "mangaChapters": null,
+                                    "released": null,
                                     "crc32": null,
                                     "translations": [],
                                     "images": []
@@ -122,7 +121,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "arc": 2,
                             "title": "Orange Town",
                             "mangaChapters": "8-21",
-                            "released_at": "2021-08-07T12:00:00Z",
                             "translations": [
                                 {
                                     "title": "Orange Town de",
@@ -138,10 +136,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "episodes": [
                                 {
                                     "id": "clksytlbt000508jw6r9x1jb1",
-                                    "part": 1,
-                                    "invariant_title": "Orange Town 01",
-                                    "manga_chapters": "8-11",
-                                    "released_at": "2021-08-07T12:00:00Z",
+                                    "episode": 1,
+                                    "title": "Orange Town 01",
+                                    "mangaChapters": "8-11",
+                                    "released": "2021-08-07T12:00:00Z",
                                     "crc32": "21000000",
                                     "translations": [
                                         {

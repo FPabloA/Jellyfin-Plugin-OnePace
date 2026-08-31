@@ -18,7 +18,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
         string? MangaChapters { get; }
 
         //Gets the release date of the arc. Null if release date is unknown, or otherwise unavailable (might not be provided by onepacerr API, could remove)
-        DateTime? ReleaseDate { get; }
+        //DateTime? ReleaseDate { get; }
 
     }
 }
