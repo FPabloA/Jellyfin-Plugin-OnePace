@@ -17,6 +17,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 {
     public class SeriesProvider : IRemoteMetadataProvider<Series, SeriesInfo>, IHasOrder
     {
+        private const string OnePaceDesc = "One Pace is a fan project that recuts the One Piece anime in an endeavor to bring it more in line with the pacing of the original manga by Eiichiro Oda. The team accomplishes this by removing filler scenes not present in the source material. This process requires meticulous editing and quality control to ensure seamless music and transitions.";
         private readonly IRepository _repository;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<SeriesProvider> _log;
@@ -45,19 +46,20 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 result.Item = new Series
                 {
                     Name = seriesMatch.InvariantTitle,
-                    OriginalTitle = seriesMatch.OriginalTitle
+                    OriginalTitle = seriesMatch.OriginalTitle,
+                    Overview = OnePaceDesc
                 };
 
                 result.Item.SetOnePaceId(Plugin.DummySeriesId);
                 result.Item.SetProviderId("AniDB", "69"); // https://anidb.net/anime/69
                 result.Item.SetProviderId("AniList", "21"); // https://anilist.co/anime/21/ONE-PIECE/
 
-                var localization = await _repository.FindBestLocalizationBySeriesAsync(info.MetadataLanguage ?? "en", cancellationToken).ConfigureAwait(false);
-                if (localization != null)
-                {
-                    result.Item.Name = localization.Title;
-                    result.Item.Overview = localization.Description;
-                }
+                //var localization = await _repository.FindBestLocalizationBySeriesAsync(info.MetadataLanguage ?? "en", cancellationToken).ConfigureAwait(false);
+                //if (localization != null)
+                //{
+                //    result.Item.Name = localization.Title;
+                //    result.Item.Overview = localization.Description;
+                //}
             }
 
             _log.LogInformation(

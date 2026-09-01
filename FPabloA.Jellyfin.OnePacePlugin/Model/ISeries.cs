@@ -14,5 +14,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
 
         //Gets the original title of the series, e.g. "One Piece"
         string OriginalTitle { get; }
+
     }
 }

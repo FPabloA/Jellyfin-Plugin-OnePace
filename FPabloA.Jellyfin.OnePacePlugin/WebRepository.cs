@@ -224,10 +224,12 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             try
             {
-                var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
-                return apiMetadata != null
-                    ? new RepositorySeries(apiMetadata.Value.GetProperty("series"))
-                    : null;
+                //Attempting to hardcode series data instead of expecting it from API
+                //var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
+                //return apiMetadata != null
+                //    ? new RepositorySeries(apiMetadata.Value.GetProperty("series"))
+                //    : null;
+                return new RepositorySeries("One Pace");
             }
             catch (HttpRequestException)
             {
@@ -412,11 +414,24 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return DateTime.Parse(releasedDateString, CultureInfo.InvariantCulture).ToUniversalTime();
         }
 
+        //private sealed class RepositorySeries : ISeries
+        //{
+        //    public RepositorySeries(JsonElement apiSeries)
+        //    {
+        //        InvariantTitle = apiSeries.GetProperty("invariant_title").GetNonNullString();
+        //    }
+
+        //    public string InvariantTitle { get; }
+
+        //    public string OriginalTitle => "One Piece";
+        //}
+        
+        //Attempting to move away from needing series in metadata JSON
         private sealed class RepositorySeries : ISeries
         {
-            public RepositorySeries(JsonElement apiSeries)
+            public RepositorySeries(string title)
             {
-                InvariantTitle = apiSeries.GetProperty("invariant_title").GetNonNullString();
+                InvariantTitle = title;
             }
 
             public string InvariantTitle { get; }
