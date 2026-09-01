@@ -52,7 +52,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     "description": "test",
                                     "mangaChapters": "1",
                                     "released": "2020-12-02T12:00:00Z",
-                                    "crc32": "11000000",
                                     "translations": [
                                         {
                                             "title": "Romance Dawn 01 de",
@@ -64,7 +63,17 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                             "description": "English description for Romance Dawn 01",
                                             "language_code": "en"
                                         }
-                                    ]
+                                    ],
+                                    "files": {
+                                        "standard": {
+                                            "CRC32": "11000000",
+                                            "hash": "cdab4a928dbbff643bbe5531f216eb36a60c85af",
+                                            "magnetURI": "magnet:?xt=urn:btih:cdab4a928dbbff643bbe5531f216eb36a60c85af&dn=%5BOne+Pace%5D%5B1-7%5D+Romance+Dawn+%5B1080p%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=https%3A%2F%2Ftracker1.520.jp%3A443%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=http%3A%2F%2Fbt.endpot.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce&tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fmovies.zsw.ca%3A6969%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.gbitt.info%3A443%2Fannounce&tr=https%3A%2F%2Ftr.burnabyhighstar.com%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce",
+                                            "duration": 1077,
+                                            "variant": "standard",
+                                            "partOfBundle": true
+                                        }
+                                    }
                                 },
                                 {
                                     "id": "clksys3c2000308jwa08325o7",
@@ -74,7 +83,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     "description": "test",
                                     "mangaChapters": "2",
                                     "released": "2020-12-02T12:00:00Z",
-                                    "crc32": "12000000",
                                     "translations": [
                                         {
                                             "title": "Romance Dawn 02 de",
@@ -86,7 +94,17 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                             "description": "English description for Romance Dawn 02",
                                             "language_code": "en"
                                         }
-                                    ]
+                                    ],
+                                    "files": {
+                                        "standard": {
+                                            "CRC32": "12000000",
+                                            "hash": "cdab4a928dbbff643bbe5531f216eb36a60c85af",
+                                            "magnetURI": "magnet:?xt=urn:btih:cdab4a928dbbff643bbe5531f216eb36a60c85af&dn=%5BOne+Pace%5D%5B1-7%5D+Romance+Dawn+%5B1080p%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=https%3A%2F%2Ftracker1.520.jp%3A443%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=http%3A%2F%2Fbt.endpot.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce&tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fmovies.zsw.ca%3A6969%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.gbitt.info%3A443%2Fannounce&tr=https%3A%2F%2Ftr.burnabyhighstar.com%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce",
+                                            "duration": 1077,
+                                            "variant": "standard",
+                                            "partOfBundle": true
+                                        }
+                                    }
                                 },
                                 {
                                     "id": "clksysvim000408jw6anzden8",
@@ -96,8 +114,17 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     "description": "test",
                                     "mangaChapters": null,
                                     "released": null,
-                                    "crc32": null,
-                                    "translations": []
+                                    "translations": [],
+                                    "files": {
+                                        "standard": {
+                                            "CRC32": null,
+                                            "hash": "cdab4a928dbbff643bbe5531f216eb36a60c85af",
+                                            "magnetURI": "magnet:?xt=urn:btih:cdab4a928dbbff643bbe5531f216eb36a60c85af&dn=%5BOne+Pace%5D%5B1-7%5D+Romance+Dawn+%5B1080p%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=https%3A%2F%2Ftracker1.520.jp%3A443%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=http%3A%2F%2Fbt.endpot.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce&tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fmovies.zsw.ca%3A6969%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.gbitt.info%3A443%2Fannounce&tr=https%3A%2F%2Ftr.burnabyhighstar.com%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce",
+                                            "duration": 1077,
+                                            "variant": "standard",
+                                            "partOfBundle": true
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -127,7 +154,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     "description": "test",
                                     "mangaChapters": "8-11",
                                     "released": "2021-08-07T12:00:00Z",
-                                    "crc32": "21000000",
                                     "translations": [
                                         {
                                             "title": "Orange Town 01 de",
@@ -139,7 +165,17 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                             "description": "English description for Orange Town 01",
                                             "language_code": "en"
                                         }
-                                    ]
+                                    ],
+                                    "files": {
+                                        "standard": {
+                                            "CRC32": "21000000",
+                                            "hash": "cdab4a928dbbff643bbe5531f216eb36a60c85af",
+                                            "magnetURI": "magnet:?xt=urn:btih:cdab4a928dbbff643bbe5531f216eb36a60c85af&dn=%5BOne+Pace%5D%5B1-7%5D+Romance+Dawn+%5B1080p%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=https%3A%2F%2Ftracker1.520.jp%3A443%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=http%3A%2F%2Fbt.endpot.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce&tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fmovies.zsw.ca%3A6969%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.gbitt.info%3A443%2Fannounce&tr=https%3A%2F%2Ftr.burnabyhighstar.com%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce",
+                                            "duration": 1077,
+                                            "variant": "standard",
+                                            "partOfBundle": true
+                                        }
+                                    }
                                 }
                             ]
                         }

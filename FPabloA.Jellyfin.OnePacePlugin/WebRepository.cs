@@ -466,18 +466,18 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 ReleaseDate = ParseReleaseDate(apiEpisode.GetProperty("released"));
                 Description = apiEpisode.GetProperty("description").GetString();
 
-                var crc32String = apiEpisode.GetProperty("crc32").GetString();
-                if (crc32String != null)
-                {
-                    Crc32 = uint.Parse(crc32String, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
-                }
-
-                //Use this when switching to one pacerr crc testing
-                //var crc32String = apiEpisode.GetProperty("files").GetProperty("CRC32").GetString();
+                //var crc32String = apiEpisode.GetProperty("crc32").GetString();
                 //if (crc32String != null)
                 //{
                 //    Crc32 = uint.Parse(crc32String, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
                 //}
+
+                //Use this when switching to one pacerr crc testing
+                var crc32String = apiEpisode.GetProperty("files").GetProperty("standard").GetProperty("CRC32").GetString();
+                if (crc32String != null)
+                {
+                    Crc32 = uint.Parse(crc32String, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+                }
             }
 
             //TODO: Clearing stuff to do with EpisodeID
