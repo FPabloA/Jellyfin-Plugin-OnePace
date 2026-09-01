@@ -11,7 +11,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
         private class TestEpisode : IEpisode
         {
-            public string Id { get; init; }
+            //public string Id { get; init; }
 
             public int Rank { get; init; }
 
@@ -27,6 +27,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             public DateTime? ReleaseDate { get; init; }
 
             public uint? Crc32 { get; init; }
+
+            public string Description { get; init; } = null!;
         }
 
         public EpisodeIdentifierTests()
@@ -35,7 +37,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             {
                 new TestEpisode
                 {
-                    Id = "clkso9n2a000008jkdjxn6acj",
+                    //TODO: Clearing stuff to do with EpisodeID
+                    //Id = "clkso9n2a000008jkdjxn6acj",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksod80d000408jkbahl6yqa",
@@ -47,7 +50,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    Id = "clkso9t8u000108jk5lbu2409",
+                    //TODO: Clearing stuff to do with EpisodeID
+                    //Id = "clkso9t8u000108jk5lbu2409",
                     Rank = 2,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksodbar000508jk9wkz0y2n",
@@ -59,7 +63,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    Id = "clkso9z6n000208jk069u63ih",
+                    //TODO: Clearing stuff to do with EpisodeID
+                    //Id = "clkso9z6n000208jk069u63ih",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksode6a000608jkfm0m77m3",
@@ -71,7 +76,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    Id = "clksoa57k000308jkb3cu73n8",
+                    //TODO: Clearing stuff to do with EpisodeID
+                    //Id = "clksoa57k000308jkb3cu73n8",
                     Rank = 2,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksodhex000708jk7bak1tml",
@@ -83,7 +89,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    Id = "clqgsm6a403yjnv5cw3owwctw",
+                    //TODO: Clearing stuff to do with EpisodeID
+                    //Id = "clqgsm6a403yjnv5cw3owwctw",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clqgslsp8006pnv5c08glvvjm",
@@ -95,7 +102,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    Id = "clqgsm60g03vvnv5cvf2afpq8",
+                    //TODO: Clearing stuff to do with EpisodeID
+                    //Id = "clqgsm60g03vvnv5cvf2afpq8",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clqgslt5n00bwnv5cj0e4wb0i",
@@ -107,7 +115,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    Id = "clqgslvmk011bnv5cvl0khvob",
+                    //TODO: Clearing stuff to do with EpisodeID
+                    //Id = "clqgslvmk011bnv5cvl0khvob",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clqgslt7v00cjnv5cg8eumgzc",
@@ -123,32 +132,34 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 .Setup(repository => repository.FindAllEpisodesAsync(It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult<IReadOnlyCollection<IEpisode>>(episodes));
 
-            repositoryMock
-                .Setup(repository => repository.FindEpisodeByIdAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
-                .Returns((string episodeId, CancellationToken _) =>
-                {
-                    return Task.FromResult(episodes.Find(episode => episode.Id == episodeId));
-                });
+            //TODO: Clearing stuff to do with EpisodeID
+            //repositoryMock
+            //    .Setup(repository => repository.FindEpisodeByIdAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            //    .Returns((string episodeId, CancellationToken _) =>
+            //    {
+            //        return Task.FromResult(episodes.Find(episode => episode.Id == episodeId));
+            //    });
 
             _repository = repositoryMock.Object;
         }
 
-        [Theory]
-        [InlineData("clkso9n2a000008jkdjxn6acj", "Romance Dawn 01")]
-        [InlineData("clkso9t8u000108jk5lbu2409", "Romance Dawn 02")]
-        [InlineData("clkso9z6n000208jk069u63ih", "Orange Town 01")]
-        [InlineData("clksoa57k000308jkb3cu73n8", "Orange Town 02")]
-        public async Task ShouldIdentifyEpisodeByProviderId(string episodeId, string expectedInvariantTitle)
-        {
-            var itemLookupInfo = new ItemLookupInfo();
-            itemLookupInfo.SetOnePaceId(episodeId);
+        //TODO: Clearing stuff to do with EpisodeID
+        //[Theory]
+        //[InlineData("clkso9n2a000008jkdjxn6acj", "Romance Dawn 01")]
+        //[InlineData("clkso9t8u000108jk5lbu2409", "Romance Dawn 02")]
+        //[InlineData("clkso9z6n000208jk069u63ih", "Orange Town 01")]
+        //[InlineData("clksoa57k000308jkb3cu73n8", "Orange Town 02")]
+        //public async Task ShouldIdentifyEpisodeByProviderId(string episodeId, string expectedInvariantTitle)
+        //{
+        //    var itemLookupInfo = new ItemLookupInfo();
+        //    itemLookupInfo.SetOnePaceId(episodeId);
 
-            var episode = await EpisodeIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
+        //    var episode = await EpisodeIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
 
-            Assert.NotNull(episode);
-            Assert.Equal(episodeId, episode.Id);
-            Assert.Equal(expectedInvariantTitle, episode.InvariantTitle);
-        }
+        //    Assert.NotNull(episode);
+        //    Assert.Equal(episodeId, episode.Id);
+        //    Assert.Equal(expectedInvariantTitle, episode.InvariantTitle);
+        //}
 
         [Theory]
         [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn 01")] // nested release name

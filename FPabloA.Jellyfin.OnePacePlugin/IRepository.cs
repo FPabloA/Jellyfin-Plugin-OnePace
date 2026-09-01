@@ -25,7 +25,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         Task<IReadOnlyCollection<IEpisode>> FindAllEpisodesAsync(CancellationToken cancellationToken);
 
         //Retrieves the arc and model based on the ID (not sure if this is relevant since onepacerr has no id field for episodes)
-        Task<IEpisode?> FindEpisodeByIdAsync(string id, CancellationToken cancellationToken);
+        //TODO: Clearing stuff to do with EpisodeID
+        //Task<IEpisode?> FindEpisodeByIdAsync(string id, CancellationToken cancellationToken);
 
         //Retrieves the available series logo art (probably not relevant since onepacerr does not provide image info)
         Task<IReadOnlyCollection<IArt>> FindAllLogoArtBySeriesAsync(CancellationToken cancellationToken);
@@ -38,7 +39,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         //Task<IReadOnlyCollection<IArt>> FindAllCoverArtByArcIdAsync(string arcId, CancellationToken cancellationToken);
 
         //Retrieves the available episode cover art (probably not relevant since onepacerr does not provide image info, or use arc IDs)
-        Task<IReadOnlyCollection<IArt>> FindAllCoverArtByEpisodeIdAsync(string episodeId, CancellationToken cancellationToken);
+        //TODO: Clearing stuff to do with EpisodeID
+        //Task<IReadOnlyCollection<IArt>> FindAllCoverArtByEpisodeIdAsync(string episodeId, CancellationToken cancellationToken);
 
         //Retrieves the series localization data (might not be relevant since onepacerr appears to only provide description and title info in one language)
         Task<ILocalization?> FindBestLocalizationBySeriesAsync(string languageCode, CancellationToken cancellationToken);
@@ -48,6 +50,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         //Task<ILocalization?> FindBestLocalizationByArcIdAsync(string arcId, string languageCode, CancellationToken cancellationToken);
 
         //Retrieves the episode localization data (might not be relevant since onepacerr appears to only provide description and title info in one language)
-        Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken);
+        //TODO: Clearing stuff to do with EpisodeID
+        //Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken);
     }
 }

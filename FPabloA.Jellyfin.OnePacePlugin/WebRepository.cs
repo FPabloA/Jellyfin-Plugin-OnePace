@@ -328,10 +328,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return null;
         }
 
-        public Task<IReadOnlyCollection<IArt>> FindAllCoverArtByEpisodeIdAsync(string episodeId, CancellationToken cancellationToken)
-        {
-            return null;
-        }
+        //public Task<IReadOnlyCollection<IArt>> FindAllCoverArtByEpisodeIdAsync(string episodeId, CancellationToken cancellationToken)
+        //{
+        //    return null;
+        //}
 
         //One pacerr doesn't use language codes at all and only provides titles and descriptions in english, will need to rework this to just return en probably
 
@@ -379,23 +379,24 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         //    return null;
         //}
 
-        public async Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken)
-        {
-            var result = await FindApiEpisodeByIdAsync(episodeId, cancellationToken)
-            .ConfigureAwait(false);
-            if (result == null)
-            {
-                return null;
-            }
+        //TODO: Clearing stuff to do with EpisodeID
+        //public async Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken)
+        //{
+        //    var result = await FindApiEpisodeByIdAsync(episodeId, cancellationToken)
+        //    .ConfigureAwait(false);
+        //    if (result == null)
+        //    {
+        //        return null;
+        //    }
 
-            var apiTranslation = ChooseBestApiTranslation(
-                result.Value.ApiEpisode.GetProperty("translations").EnumerateArray(),
-                ToApiLanguageCode(languageCode));
+        //    var apiTranslation = ChooseBestApiTranslation(
+        //        result.Value.ApiEpisode.GetProperty("translations").EnumerateArray(),
+        //        ToApiLanguageCode(languageCode));
 
-            return apiTranslation != null
-                ? new RepositoryLocalization(apiTranslation.Value)
-                : null;
-        }
+        //    return apiTranslation != null
+        //        ? new RepositoryLocalization(apiTranslation.Value)
+        //        : null;
+        //}
 
         private static DateTime? ParseReleaseDate(JsonElement jsonElement)
         {
@@ -452,7 +453,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             public RepositoryEpisode(string arcNum, JsonElement apiEpisode)
             {
-                Id = apiEpisode.GetProperty("id").GetNonNullString();
+                //TODO: Clearing stuff to do with EpisodeID
+                //Id = apiEpisode.GetProperty("id").GetNonNullString();
                 Rank = apiEpisode.GetProperty("episode").GetInt32();
                 //TODO: Clearing stuff with arcID
                 //ArcId = ArcId;
@@ -460,6 +462,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 InvariantTitle = apiEpisode.GetProperty("title").GetNonNullString();
                 MangaChapters = apiEpisode.GetProperty("mangaChapters").GetString();
                 ReleaseDate = ParseReleaseDate(apiEpisode.GetProperty("released"));
+                Description = apiEpisode.GetProperty("description").GetString();
 
                 var crc32String = apiEpisode.GetProperty("crc32").GetString();
                 if (crc32String != null)
@@ -475,7 +478,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 //}
             }
 
-            public string Id { get; }
+            //TODO: Clearing stuff to do with EpisodeID
+            //public string Id { get; }
 
             public int Rank { get; }
 
@@ -491,6 +495,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             public DateTime? ReleaseDate { get; }
 
             public uint? Crc32 { get; }
+
+            public string Description { get; }
         }
 
         //not implementing for now since one pacerr doesnt provide image data

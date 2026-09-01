@@ -56,21 +56,22 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                         Name = episodeMatch.InvariantTitle,
                         //episodes do have release date data
                         PremiereDate = episodeMatch.ReleaseDate,
-                        ProductionYear = episodeMatch.ReleaseDate?.Year
+                        ProductionYear = episodeMatch.ReleaseDate?.Year,
+                        Overview = episodeMatch.Description
                     };
 
-                    result.Item.SetOnePaceId(episodeMatch.Id);
-
-                    var localization = await _repository.FindBestLocalizationByEpisodeIdAsync(
-                        episodeMatch.Id,
-                        info.MetadataLanguage ?? "en",
-                        cancellationToken)
-                        .ConfigureAwait(false);
-                    if (localization != null)
-                    {
-                        result.Item.Name = localization.Title;
-                        result.Item.Overview = localization.Description;
-                    }
+                    //TODO: Clearing EpisodeId stuff
+                    //result.Item.SetOnePaceId(episodeMatch.Id);
+                    //var localization = await _repository.FindBestLocalizationByEpisodeIdAsync(
+                    //    episodeMatch.Id,
+                    //    info.MetadataLanguage ?? "en",
+                    //    cancellationToken)
+                    //    .ConfigureAwait(false);
+                    //if (localization != null)
+                    //{
+                    //    result.Item.Name = localization.Title;
+                    //    result.Item.Overview = localization.Description;
+                    //}
 
                 }
                 else

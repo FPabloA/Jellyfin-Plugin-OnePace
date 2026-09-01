@@ -226,18 +226,19 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         //    Assert.Equal(expectedInvariantTitle, result.InvariantTitle);
         //}
 
-        [Theory]
-        [InlineData("clksyqwxl000208jw82wh3y0g", "Romance Dawn 01")]
-        [InlineData("clksys3c2000308jwa08325o7", "Romance Dawn 02")]
-        [InlineData("clksysvim000408jw6anzden8", "Romance Dawn 03")]
-        [InlineData("clksytlbt000508jw6r9x1jb1", "Orange Town 01")]
-        public async Task ShouldFindEpisodeById(string episodeId, string expectedInvariantTitle)
-        {
-            var result = await _webRepository.FindEpisodeByIdAsync(episodeId, CancellationToken.None);
+        //TODO: Clearing stuff to do with EpisodeID
+        //[Theory]
+        //[InlineData("clksyqwxl000208jw82wh3y0g", "Romance Dawn 01")]
+        //[InlineData("clksys3c2000308jwa08325o7", "Romance Dawn 02")]
+        //[InlineData("clksysvim000408jw6anzden8", "Romance Dawn 03")]
+        //[InlineData("clksytlbt000508jw6r9x1jb1", "Orange Town 01")]
+        //public async Task ShouldFindEpisodeById(string episodeId, string expectedInvariantTitle)
+        //{
+        //    var result = await _webRepository.FindEpisodeByIdAsync(episodeId, CancellationToken.None);
 
-            Assert.NotNull(result);
-            Assert.Equal(expectedInvariantTitle, result.InvariantTitle);
-        }
+        //    Assert.NotNull(result);
+        //    Assert.Equal(expectedInvariantTitle, result.InvariantTitle);
+        //}
 
         ////Regression test for ArcId not being populated correctly
         /////Not using ArcIds anyways, so maybe ok to just ignore for now
@@ -285,23 +286,24 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         //    Assert.Equal(expectedDescription, result.Description);
         //}
 
+        //TODO: Clearing stuff to do with EpisodeID
         //TODO: Same as above
-        [Theory]
-        [InlineData("clksyqwxl000208jw82wh3y0g", "de", "Romance Dawn 01 de", "Deutsche Beschreibung für Romance Dawn 01")]
-        [InlineData("clksyqwxl000208jw82wh3y0g", "en", "Romance Dawn 01 en", "English description for Romance Dawn 01")]
-        [InlineData("clksyqwxl000208jw82wh3y0g", "invalid", "Romance Dawn 01 en", "English description for Romance Dawn 01")]
-        public async Task ShouldFindBestEpisodeLocalization(
-            string episodeId,
-            string languageCode,
-            string expectedTitle,
-            string expectedDescription)
-        {
-            var result = await _webRepository.FindBestLocalizationByEpisodeIdAsync(episodeId, languageCode, CancellationToken.None);
+        //[Theory]
+        //[InlineData("clksyqwxl000208jw82wh3y0g", "de", "Romance Dawn 01 de", "Deutsche Beschreibung für Romance Dawn 01")]
+        //[InlineData("clksyqwxl000208jw82wh3y0g", "en", "Romance Dawn 01 en", "English description for Romance Dawn 01")]
+        //[InlineData("clksyqwxl000208jw82wh3y0g", "invalid", "Romance Dawn 01 en", "English description for Romance Dawn 01")]
+        //public async Task ShouldFindBestEpisodeLocalization(
+        //    string episodeId,
+        //    string languageCode,
+        //    string expectedTitle,
+        //    string expectedDescription)
+        //{
+        //    var result = await _webRepository.FindBestLocalizationByEpisodeIdAsync(episodeId, languageCode, CancellationToken.None);
 
-            Assert.NotNull(result);
-            Assert.Equal(expectedTitle, result.Title);
-            Assert.Equal(expectedDescription, result.Description);
-        }
+        //    Assert.NotNull(result);
+        //    Assert.Equal(expectedTitle, result.Title);
+        //    Assert.Equal(expectedDescription, result.Description);
+        //}
 
         ////TODO:Not sure what this should be checking since one pacerr will not return art, but we must override this method for jellyfin
         //[Fact]

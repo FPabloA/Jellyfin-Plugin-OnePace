@@ -10,7 +10,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
     public interface IEpisode
     {
         //Gets the CUID for the Episode (might not be relevant anymore, unless this is for jellyfin purposes and not one pace)
-        string Id { get; }
+        //TODO: Clearing EpisodeId stuff
+        //string Id { get; }
 
         ////Gets the CUID of the arc that the episode belongs to (if the arc CUID is not relevant, then this will be removed too)
         //TODO: Clearing ArcId stuff
@@ -33,5 +34,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
 
         //Gets the CRC-32 checksum of the episode file. Null if unknown or otherwise unavailable
         uint? Crc32 { get; }
+
+        //Gets the description of the episode
+        string Description { get; }
     }
 }
