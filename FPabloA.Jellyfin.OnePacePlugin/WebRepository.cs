@@ -188,36 +188,37 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             }
         }
 
-        private async Task<(string ArcId, JsonElement ApiEpisode)?> FindApiEpisodeByIdAsync(string id, CancellationToken cancellationToken)
-        {
+        //TODO: Clearing EpisodeID stuff
+        //private async Task<(string ArcId, JsonElement ApiEpisode)?> FindApiEpisodeByIdAsync(string id, CancellationToken cancellationToken)
+        //{
 
-            try
-            {
-                var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
-                if (apiMetadata == null)
-                {
-                    return null;
-                }
+        //    try
+        //    {
+        //        var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
+        //        if (apiMetadata == null)
+        //        {
+        //            return null;
+        //        }
 
-                foreach (var apiArc in apiMetadata.Value.GetProperty("arcs").EnumerateArray())
-                {
-                    var matchingEpisode = apiArc.GetProperty("episodes").EnumerateArray()
-                        .FirstOrNull(apiEpisode => apiEpisode.GetProperty("id").GetNonNullString() == id);
+        //        foreach (var apiArc in apiMetadata.Value.GetProperty("arcs").EnumerateArray())
+        //        {
+        //            var matchingEpisode = apiArc.GetProperty("episodes").EnumerateArray()
+        //                .FirstOrNull(apiEpisode => apiEpisode.GetProperty("id").GetNonNullString() == id);
 
-                    if (matchingEpisode != null)
-                    {
-                        return (apiArc.GetProperty("arc").ToString(), matchingEpisode.Value);
-                    }
-                }
-                return null;
-            }
-            catch (HttpRequestException)
-            {
-                //Details should be logged futher down the stack. just treat the data as unavailable
-                return null;
-            }
+        //            if (matchingEpisode != null)
+        //            {
+        //                return (apiArc.GetProperty("arc").ToString(), matchingEpisode.Value);
+        //            }
+        //        }
+        //        return null;
+        //    }
+        //    catch (HttpRequestException)
+        //    {
+        //        //Details should be logged futher down the stack. just treat the data as unavailable
+        //        return null;
+        //    }
 
-        }
+        //}
 
         public async Task<ISeries?> FindSeriesAsync(CancellationToken cancellationToken)
         {
@@ -301,15 +302,16 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return results;
         }
 
-        public async Task<IEpisode?> FindEpisodeByIdAsync(string id, CancellationToken cancellationToken)
-        {
+        //TODO: clearing episodeid stuff
+        //public async Task<IEpisode?> FindEpisodeByIdAsync(string id, CancellationToken cancellationToken)
+        //{
 
-            var result = await FindApiEpisodeByIdAsync(id, cancellationToken).ConfigureAwait(false);
-            return result != null
-                ? new RepositoryEpisode(result.Value.ArcId, result.Value.ApiEpisode)
-                : null;
+        //    var result = await FindApiEpisodeByIdAsync(id, cancellationToken).ConfigureAwait(false);
+        //    return result != null
+        //        ? new RepositoryEpisode(result.Value.ArcId, result.Value.ApiEpisode)
+        //        : null;
 
-        }
+        //}
 
         //One Pacerr doesn't provide image data, so will return null for now
 

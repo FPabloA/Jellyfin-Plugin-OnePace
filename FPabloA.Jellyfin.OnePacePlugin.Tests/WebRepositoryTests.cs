@@ -46,8 +46,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "episodes": [
                                 {
                                     "id": "clksyqwxl000208jw82wh3y0g",
+                                    "arc": 1,
                                     "episode": 1,
                                     "title": "Romance Dawn 01",
+                                    "description": "test",
                                     "mangaChapters": "1",
                                     "released": "2020-12-02T12:00:00Z",
                                     "crc32": "11000000",
@@ -66,8 +68,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                 },
                                 {
                                     "id": "clksys3c2000308jwa08325o7",
+                                    "arc": 1,
                                     "episode": 2,
                                     "title": "Romance Dawn 02",
+                                    "description": "test",
                                     "mangaChapters": "2",
                                     "released": "2020-12-02T12:00:00Z",
                                     "crc32": "12000000",
@@ -86,8 +90,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                 },
                                 {
                                     "id": "clksysvim000408jw6anzden8",
+                                    "arc": 1,
                                     "episode": 3,
                                     "title": "Romance Dawn 03",
+                                    "description": "test",
                                     "mangaChapters": null,
                                     "released": null,
                                     "crc32": null,
@@ -115,8 +121,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "episodes": [
                                 {
                                     "id": "clksytlbt000508jw6r9x1jb1",
+                                    "arc": 2,
                                     "episode": 1,
                                     "title": "Orange Town 01",
+                                    "description": "test",
                                     "mangaChapters": "8-11",
                                     "released": "2021-08-07T12:00:00Z",
                                     "crc32": "21000000",
