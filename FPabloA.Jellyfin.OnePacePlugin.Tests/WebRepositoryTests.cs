@@ -14,22 +14,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         private const string MetadataResponse = """
             {
                 "data": {
-                    "series": {
-                          "invariant_title": "One Pace",
-                          "translations": [
-                                {
-                                      "title": "One Pace en",
-                                      "description": "English description",
-                                      "language_code": "en"
-                                },
-                                {
-                                      "title": "One Pace de",
-                                      "description": "Deutsche Beschreibung",
-                                      "language_code": "de"
-                                }
-                          ]
-                    },
-
                     "arcs": [
                         {
                             "arc": 1,
@@ -297,18 +281,19 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         //}
 
         //TODO: This should probably just be checking its falling back to en everytime
-        [Theory]
-        [InlineData("en", "One Pace en", "English description")]
-        [InlineData("de", "One Pace de", "Deutsche Beschreibung")]
-        [InlineData("invalid", "One Pace en", "English description")]
-        public async Task ShouldFindBestSeriesLocalization(string languageCode, string expectedTitle, string expectedDescription)
-        {
-            var result = await _webRepository.FindBestLocalizationBySeriesAsync(languageCode, CancellationToken.None);
+        //TODO 2: Localization checks in general will probably be removed since we can only fetch data in english
+        //[Theory]
+        //[InlineData("en", "One Pace en", "English description")]
+        //[InlineData("de", "One Pace de", "Deutsche Beschreibung")]
+        //[InlineData("invalid", "One Pace en", "English description")]
+        //public async Task ShouldFindBestSeriesLocalization(string languageCode, string expectedTitle, string expectedDescription)
+        //{
+        //    var result = await _webRepository.FindBestLocalizationBySeriesAsync(languageCode, CancellationToken.None);
 
-            Assert.NotNull(result);
-            Assert.Equal(expectedTitle, result.Title);
-            Assert.Equal(expectedDescription, result.Description);
-        }
+        //    Assert.NotNull(result);
+        //    Assert.Equal(expectedTitle, result.Title);
+        //    Assert.Equal(expectedDescription, result.Description);
+        //}
 
         //TODO: Same as above
         //TODO:Clearing stuff to do with arcID
