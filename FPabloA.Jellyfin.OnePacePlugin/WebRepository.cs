@@ -76,7 +76,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 var document = await JsonDocument
                     .ParseAsync(stream, cancellationToken: cancellationToken)
                     .ConfigureAwait(false);
-                return document.RootElement.GetProperty("data");
+                return document.RootElement;
 
             }).ConfigureAwait(false);
 
@@ -247,7 +247,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
                 if (apiMetadata != null)
                 {
-                    results.AddRange(apiMetadata.Value.GetProperty("arcs").EnumerateArray().Select(apiArc =>
+                    results.AddRange(apiMetadata.Value.EnumerateArray().Select(apiArc =>
                     new RepositoryArc(apiArc)));
                 }
             }
@@ -290,7 +290,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 if (apiMetadata != null)
                 {
                     results.AddRange(
-                        from apiArc in apiMetadata.Value.GetProperty("arcs").EnumerateArray()
+                        from apiArc in apiMetadata.Value.EnumerateArray()
                         from apiEpisode in apiArc.GetProperty("episodes").EnumerateArray()
                         select new RepositoryEpisode(apiArc.GetProperty("arc").ToString(), apiEpisode));
                 }
