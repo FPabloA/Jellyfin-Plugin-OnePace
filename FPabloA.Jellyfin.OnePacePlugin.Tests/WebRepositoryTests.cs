@@ -95,18 +95,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "description": "test",
                             "mangaChapters": "8-11",
                             "released": "2021-08-07T12:00:00Z",
-                            "translations": [
-                                {
-                                    "title": "Orange Town 01 de",
-                                    "description": "Deutsche Beschreibung für Orange Town 01",
-                                    "language_code": "de"
-                                },
-                                {
-                                    "title": "Orange Town 01 en",
-                                    "description": "English description for Orange Town 01",
-                                    "language_code": "en"
-                                }
-                            ],
                             "files": {
                                 "standard": {
                                     "CRC32": "21000000",
@@ -136,19 +124,18 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     //TODO: change uri to onepacerr
                     if (request.RequestUri != null &&
-                        request.Method == HttpMethod.Post &&
-                        request.RequestUri.AbsoluteUri == "https://onepacerr.com/api/v1/metadata" &&
-                        request.Content != null)
+                        request.Method == HttpMethod.Get &&
+                        request.RequestUri.AbsoluteUri == "https://onepacerr.com/api/v1/metadata/arcs/?episodes=true&files=true")
                     {
                         var requestContent = request.Content.ReadAsStringAsync(cancellationToken).Result;
-                        if (requestContent.Contains("series") && requestContent.Contains("arcs"))
-                        {
+                        //if (requestContent.Contains("series") && requestContent.Contains("arcs"))
+                        //{
                             return Task.FromResult(new HttpResponseMessage
                             {
                                 StatusCode = HttpStatusCode.OK,
                                 Content = new StringContent(MetadataResponse)
                             });
-                        }
+                        //}
                     }
 
                     return Task.FromResult(new HttpResponseMessage

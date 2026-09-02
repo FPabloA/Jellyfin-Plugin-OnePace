@@ -33,16 +33,16 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             _log = logger;
         }
 
-        private async Task<JsonElement> QueryGraphQLAsync(string query, CancellationToken cancellationToken)
+        private async Task<JsonElement> QueryAsync(string query, CancellationToken cancellationToken)
         {
             return await _memoryCache.GetOrCreateAsync(query, async cacheEntry =>
             {
                 //TODO: still need to change the content portion probably, and this will just be an http get, not graphql query
-                var request = new HttpRequestMessage(HttpMethod.Post, "https://onepacerr.com/api/v1/metadata");
+                var request = new HttpRequestMessage(HttpMethod.Get, query);
                 request.Content = new StringContent(
                     JsonSerializer.Serialize(new
                     {
-                        query
+
                     }),
                     Encoding.UTF8,
                     "application/json");
@@ -72,7 +72,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 
                 }
 
-                var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
                 var document = await JsonDocument
                     .ParseAsync(stream, cancellationToken: cancellationToken)
                     .ConfigureAwait(false);
@@ -88,8 +88,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             try
             {
                 //TODO: Change this to OnePacerr
-                return await QueryGraphQLAsync(
-                    @"{series{invariant_title translations{title description language_code}}arcs{id part invariant_title manga_chapters released_at translations{title description language_code}images{src width}episodes{id part invariant_title manga_chapters released_at crc32 translations{title description language_code}images{src width}}}}",
+                return await QueryAsync(
+                    @"https://onepacerr.com/api/v1/metadata/arcs/?episodes=true&files=true",
                     cancellationToken)
                     .ConfigureAwait(false);
             }
@@ -447,7 +447,12 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 //Id = apiArc.GetProperty("id").GetNonNullString();
                 Rank = apiArc.GetProperty("arc").GetInt32();
                 InvariantTitle = apiArc.GetProperty("title").GetNonNullString();
-                MangaChapters = apiArc.GetProperty("mangaChapters").GetString();
+                //If content is anime only, there will be no mangaChapters property, need to check
+                if (apiArc.TryGetProperty("mangaChapters", out _))
+                {
+                    MangaChapters = apiArc.GetProperty("mangaChapters").GetString();
+                }
+                
                 Description = apiArc.GetProperty("description").GetString();
                 //ReleaseDate = ParseReleaseDate(apiArc.GetProperty("released_at"));
             }
