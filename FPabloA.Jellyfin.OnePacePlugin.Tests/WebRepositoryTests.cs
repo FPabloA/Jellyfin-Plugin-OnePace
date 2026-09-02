@@ -29,10 +29,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             ],
                             "episodes": [
                                 {
-                                    "id": "clksyqwxl000208jw82wh3y0g",
                                     "arc": 1,
                                     "episode": 1,
-                                    "title": "Romance Dawn 01",
+                                    "title": "Romance Dawn, the Dawn of an Adventure",
                                     "description": "test",
                                     "mangaChapters": "1",
                                     "released": "2020-12-02T12:00:00Z",
@@ -60,10 +59,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     }
                                 },
                                 {
-                                    "id": "clksys3c2000308jwa08325o7",
                                     "arc": 1,
                                     "episode": 2,
-                                    "title": "Romance Dawn 02",
+                                    "title": "They Call Him \"Straw Hat\" Luffy",
                                     "description": "test",
                                     "mangaChapters": "2",
                                     "released": "2020-12-02T12:00:00Z",
@@ -91,10 +89,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                                     }
                                 },
                                 {
-                                    "id": "clksysvim000408jw6anzden8",
                                     "arc": 1,
                                     "episode": 3,
-                                    "title": "Romance Dawn 03",
+                                    "title": "The Pirate King and the Master Swordsman",
                                     "description": "test",
                                     "mangaChapters": null,
                                     "released": null,
@@ -131,10 +128,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             ],
                             "episodes": [
                                 {
-                                    "id": "clksytlbt000508jw6r9x1jb1",
                                     "arc": 2,
                                     "episode": 1,
-                                    "title": "Orange Town 01",
+                                    "title": "Enter: Nami",
                                     "description": "test",
                                     "mangaChapters": "8-11",
                                     "released": "2021-08-07T12:00:00Z",
@@ -237,10 +233,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
             Assert.NotNull(result);
             Assert.Collection(result,
-                episode => Assert.Equal("Romance Dawn 01", episode.InvariantTitle),
-                episode => Assert.Equal("Romance Dawn 02", episode.InvariantTitle),
-                episode => Assert.Equal("Romance Dawn 03", episode.InvariantTitle),
-                episode => Assert.Equal("Orange Town 01", episode.InvariantTitle));
+                episode => Assert.Equal("Romance Dawn, the Dawn of an Adventure", episode.InvariantTitle),
+                episode => Assert.Equal("They Call Him \"Straw Hat\" Luffy", episode.InvariantTitle),
+                episode => Assert.Equal("The Pirate King and the Master Swordsman", episode.InvariantTitle),
+                episode => Assert.Equal("Enter: Nami", episode.InvariantTitle));
         }
 
         //[Theory]
