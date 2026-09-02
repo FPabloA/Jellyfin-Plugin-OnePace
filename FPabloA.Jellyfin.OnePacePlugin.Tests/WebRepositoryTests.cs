@@ -13,6 +13,29 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         //TODO:Rework this to make it more inline with a OnePacerr Response vs a One Pace API response
         private const string MetadataResponse = """
             [
+            {
+                    "arc": 0,
+                    "title": "Specials",
+                    "description": "Occasionally, the One Pace team likes to have some extra fun, so we made animated specials. See alternative storylines with twists you might not have expected.",
+                    "episodes": [
+                        {
+                            "arc": 0,
+                            "episode": 1,
+                            "title": "One Piece Fan Letter",
+                            "description": "test",
+                            "files": {
+                                "standard": {
+                                    "CRC32": "00000000",
+                                    "hash": "cdab4a928dbbff643bbe5531f216eb36a60c85af",
+                                    "magnetURI": "magnet:?xt=urn:btih:cdab4a928dbbff643bbe5531f216eb36a60c85af&dn=%5BOne+Pace%5D%5B1-7%5D+Romance+Dawn+%5B1080p%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=https%3A%2F%2Ftracker1.520.jp%3A443%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=http%3A%2F%2Fbt.endpot.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce&tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fmovies.zsw.ca%3A6969%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.gbitt.info%3A443%2Fannounce&tr=https%3A%2F%2Ftr.burnabyhighstar.com%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce",
+                                    "duration": 1077,
+                                    "variant": "standard",
+                                    "partOfBundle": true
+                                }
+                            }
+                        }
+                    ]
+                },
                 {
                     "arc": 1,
                     "title": "Romance Dawn",
@@ -94,7 +117,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "title": "Enter: Nami",
                             "description": "test",
                             "mangaChapters": "8-11",
-                            "released": "2021-08-07T12:00:00Z",
                             "files": {
                                 "standard": {
                                     "CRC32": "21000000",
@@ -168,6 +190,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
             Assert.NotNull(result);
             Assert.Collection(result,
+                arc => Assert.Equal("Specials", arc.InvariantTitle),
                 arc => Assert.Equal("Romance Dawn", arc.InvariantTitle),
                 arc => Assert.Equal("Orange Town", arc.InvariantTitle));
         }
@@ -179,6 +202,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
             Assert.NotNull(result);
             Assert.Collection(result,
+                episode => Assert.Equal("One Piece Fan Letter", episode.InvariantTitle),
                 episode => Assert.Equal("Romance Dawn, the Dawn of an Adventure", episode.InvariantTitle),
                 episode => Assert.Equal("They Call Him \"Straw Hat\" Luffy", episode.InvariantTitle),
                 episode => Assert.Equal("The Pirate King and the Master Swordsman", episode.InvariantTitle),

@@ -482,8 +482,14 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 //ArcId = ArcId;
                 ArcNum = arcNum;
                 InvariantTitle = apiEpisode.GetProperty("title").GetNonNullString();
-                MangaChapters = apiEpisode.GetProperty("mangaChapters").GetString();
-                ReleaseDate = ParseReleaseDate(apiEpisode.GetProperty("released"));
+                if (apiEpisode.TryGetProperty("mangaChapters", out _))
+                {
+                    MangaChapters = apiEpisode.GetProperty("mangaChapters").GetString();
+                }
+                if (apiEpisode.TryGetProperty("released", out _))
+                {
+                    ReleaseDate = ParseReleaseDate(apiEpisode.GetProperty("released"));
+                }
                 Description = apiEpisode.GetProperty("description").GetString();
 
                 //var crc32String = apiEpisode.GetProperty("crc32").GetString();
