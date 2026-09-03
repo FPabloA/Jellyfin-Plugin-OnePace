@@ -39,10 +39,11 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     //TODO: Clearing stuff to do with EpisodeID
                     //Id = "clkso9n2a000008jkdjxn6acj",
+                    ArcNum = "1",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksod80d000408jkbahl6yqa",
-                    InvariantTitle = "Romance Dawn 01",
+                    InvariantTitle = "Romance Dawn, the Dawn of an Adventure",
                     MangaChapters = "1",
                     ReleaseDate = null,
                     Crc32 = 0xD767799C
@@ -52,6 +53,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     //TODO: Clearing stuff to do with EpisodeID
                     //Id = "clkso9t8u000108jk5lbu2409",
+                    ArcNum = "1",
                     Rank = 2,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksodbar000508jk9wkz0y2n",
@@ -65,6 +67,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     //TODO: Clearing stuff to do with EpisodeID
                     //Id = "clkso9z6n000208jk069u63ih",
+                    ArcNum = "2",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksode6a000608jkfm0m77m3",
@@ -78,6 +81,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     //TODO: Clearing stuff to do with EpisodeID
                     //Id = "clksoa57k000308jkb3cu73n8",
+                    ArcNum = "2",
                     Rank = 2,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksodhex000708jk7bak1tml",
@@ -91,11 +95,12 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 {
                     //TODO: Clearing stuff to do with EpisodeID
                     //Id = "clqgsm6a403yjnv5cw3owwctw",
+                    ArcNum = "10",
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clqgslsp8006pnv5c08glvvjm",
-                    InvariantTitle = "Whisky Peak 01",
-                    MangaChapters = null,
+                    InvariantTitle = "The Town of Welcome",
+                    MangaChapters = "106-109",
                     ReleaseDate = null,
                     Crc32 = null
                 },
@@ -162,16 +167,16 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         //}
 
         [Theory]
-        [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn 01")] // nested release name
-        [InlineData("/path/to/One Pace/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn 01")] // release name
+        [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // nested release name
+        [InlineData("/path/to/One Pace/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // release name
         [InlineData("/path/to/One Pace/[One Pace][2] Romance Dawn 02 [1080p][04A43CEF].mkv", "Romance Dawn 02")] // release name
         [InlineData("/path/to/One Pace/[One Pace][8-11] Orange Town 01 [480p][A2F5F372].mkv", "Orange Town 01")] // release name
         [InlineData("/path/to/One Pace/[One Pace][11-16] Orange Town 02 [480p][3D7957D8].mkv", "Orange Town 02")] // release name
-        [InlineData("/path/to/One Pace/1.mkv", "Romance Dawn 01")] // chapter range only
+        [InlineData("/path/to/One Pace/1.mkv", "Romance Dawn, the Dawn of an Adventure")] // chapter range only
         [InlineData("/path/to/One Pace/8-11.mkv", "Orange Town 01")] // chapter range only
-        [InlineData("/path/to/One Pace/Romance Dawn 01.mkv", "Romance Dawn 01")] // invariant title only
+        [InlineData("/path/to/One Pace/Romance Dawn 01.mkv", "Romance Dawn, the Dawn of an Adventure")] // invariant title only
         [InlineData("/path/to/One Pace/Orange Town 01.mkv", "Orange Town 01")] // invariant title only
-        [InlineData("/path/to/One Pace/D767799C.mkv", "Romance Dawn 01")] // uppercase CRC-32 only
+        [InlineData("/path/to/One Pace/D767799C.mkv", "Romance Dawn, the Dawn of an Adventure")] // uppercase CRC-32 only
         [InlineData("/path/to/One Pace/c7ca5080.mkv", "Orange Town 01")] // lowercase CRC-32 only
         public async Task ShouldIdentifyEpisodeByPath(string path, string expectedInvariantTitle)
         {
@@ -215,7 +220,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             var episode = await EpisodeIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
 
             Assert.NotNull(episode);
-            Assert.Equal("Whisky Peak 01", episode.InvariantTitle);
+            Assert.Equal("The Town of Welcome", episode.InvariantTitle);
         }
 
         //Jellyfin 10.9.x allows media to not have a path
