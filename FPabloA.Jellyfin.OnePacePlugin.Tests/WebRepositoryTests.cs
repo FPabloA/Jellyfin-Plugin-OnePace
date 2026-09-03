@@ -41,13 +41,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     "title": "Romance Dawn",
                     "mangaChapters": "1 - 7",
                     "description": "Monkey D. Luffy sets out on an adventure to form a crew, find the legendary One Piece, and become the pirate king.",
-                    "translations": [
-                        {
-                            "title": "Romance Dawn en",
-                            "description": "English description for Romance Dawn",
-                            "language_code": "en"
-                        }
-                    ],
                     "episodes": [
                         {
                             "arc": 1,
@@ -207,6 +200,20 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 episode => Assert.Equal("They Call Him \"Straw Hat\" Luffy", episode.InvariantTitle),
                 episode => Assert.Equal("The Pirate King and the Master Swordsman", episode.InvariantTitle),
                 episode => Assert.Equal("Enter: Nami", episode.InvariantTitle));
+        }
+
+        [Fact]
+        public async Task ShouldConstructFileTitlesCorrectly()
+        {
+            var result = await _webRepository.FindAllEpisodesAsync(CancellationToken.None);
+
+            Assert.NotNull(result);
+            Assert.Collection(result,
+                episode => Assert.Equal("Specials 01", episode.FileTitle),
+                episode => Assert.Equal("Romance Dawn 01", episode.FileTitle),
+                episode => Assert.Equal("Romance Dawn 02", episode.FileTitle),
+                episode => Assert.Equal("Romance Dawn 03", episode.FileTitle),
+                episode => Assert.Equal("Orange Town 01", episode.FileTitle));
         }
 
         //[Theory]

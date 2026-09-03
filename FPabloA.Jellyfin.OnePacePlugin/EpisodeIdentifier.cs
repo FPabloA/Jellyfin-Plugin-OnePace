@@ -62,9 +62,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 }
 
                 //match against invariant titles (case 3)
-                foreach (var episode in episodes.OrderByDescending(episode => episode.InvariantTitle.Length))
+                //Changing to FileTitle instead since this should be closer to what is expected by the regex
+                foreach (var episode in episodes.OrderByDescending(episode => episode.FileTitle.Length))
                 {
-                    if (!string.IsNullOrEmpty(episode.InvariantTitle) && IdentifierUtil.BuildTextRegex(episode.InvariantTitle).IsMatch(fileName))
+                    if (!string.IsNullOrEmpty(episode.FileTitle) && IdentifierUtil.BuildTextRegex(episode.FileTitle).IsMatch(fileName))
                     {
                         return episode;
                     }

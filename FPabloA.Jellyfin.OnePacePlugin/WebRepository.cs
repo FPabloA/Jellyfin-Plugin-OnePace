@@ -292,7 +292,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                     results.AddRange(
                         from apiArc in apiMetadata.Value.EnumerateArray()
                         from apiEpisode in apiArc.GetProperty("episodes").EnumerateArray()
-                        select new RepositoryEpisode(apiArc.GetProperty("arc").ToString(), apiEpisode));
+                        select new RepositoryEpisode(apiArc.GetProperty("arc").ToString(), apiArc.GetProperty("title").ToString(), apiEpisode));
                 }
             }
             catch
@@ -414,6 +414,21 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return DateTime.Parse(releasedDateString, CultureInfo.InvariantCulture).ToUniversalTime();
         }
 
+        private static string RebuildFileTitle(string arcTitle, int episodeNum)
+        {
+            string padEpisode;
+
+            if (episodeNum < 10)
+            {
+                padEpisode = "0" + episodeNum;
+            }
+            else
+            {
+                padEpisode = episodeNum.ToString();
+            }
+            return $"{arcTitle} {padEpisode}";
+        }
+
         //private sealed class RepositorySeries : ISeries
         //{
         //    public RepositorySeries(JsonElement apiSeries)
@@ -473,7 +488,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
 
         private sealed class RepositoryEpisode : IEpisode
         {
-            public RepositoryEpisode(string arcNum, JsonElement apiEpisode)
+            public RepositoryEpisode(string arcNum, string arcName, JsonElement apiEpisode)
             {
                 //TODO: Clearing stuff to do with EpisodeID
                 //Id = apiEpisode.GetProperty("id").GetNonNullString();
@@ -482,6 +497,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 //ArcId = ArcId;
                 ArcNum = arcNum;
                 InvariantTitle = apiEpisode.GetProperty("title").GetNonNullString();
+                FileTitle = RebuildFileTitle(arcName, Rank);
                 if (apiEpisode.TryGetProperty("mangaChapters", out _))
                 {
                     MangaChapters = apiEpisode.GetProperty("mangaChapters").GetString();
@@ -491,12 +507,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                     ReleaseDate = ParseReleaseDate(apiEpisode.GetProperty("released"));
                 }
                 Description = apiEpisode.GetProperty("description").GetString();
-
-                //var crc32String = apiEpisode.GetProperty("crc32").GetString();
-                //if (crc32String != null)
-                //{
-                //    Crc32 = uint.Parse(crc32String, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
-                //}
 
                 //Use this when switching to one pacerr crc testing
                 var crc32String = apiEpisode.GetProperty("files").GetProperty("standard").GetProperty("CRC32").GetString();
@@ -517,6 +527,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             public string ArcNum { get; }
 
             public string InvariantTitle { get; }
+
+            public string FileTitle { get; }
 
             public string? MangaChapters { get; }
 

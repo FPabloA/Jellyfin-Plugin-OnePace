@@ -26,6 +26,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
         //Gets the invariant title of the episode, e.g. "Romance Dawn 01"
         string InvariantTitle { get; }
 
+        //Reconstructed File Title for matching purposes
+        string FileTitle { get; }
+
         //Gets the manga chapters covered by the episode. Null if unknown, or if episode is anime-only
         string? MangaChapters { get; }
 

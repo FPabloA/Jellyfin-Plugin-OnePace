@@ -22,6 +22,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
             public string InvariantTitle { get; init; } = null!;
 
+            public string FileTitle { get; init; } = null;
+
             public string? MangaChapters { get; init; }
 
             public DateTime? ReleaseDate { get; init; }
@@ -44,6 +46,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksod80d000408jkbahl6yqa",
                     InvariantTitle = "Romance Dawn, the Dawn of an Adventure",
+                    FileTitle = "Romance Dawn 01",
                     MangaChapters = "1",
                     ReleaseDate = null,
                     Crc32 = 0xD767799C
@@ -57,7 +60,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 2,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksodbar000508jk9wkz0y2n",
-                    InvariantTitle = "Romance Dawn 02",
+                    InvariantTitle = "They Call Him \"Straw Hat\" Luffy",
+                    FileTitle = "Romance Dawn 02",
                     MangaChapters = "2",
                     ReleaseDate = null,
                     Crc32 = 0x04A43CEF
@@ -71,7 +75,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksode6a000608jkfm0m77m3",
-                    InvariantTitle = "Orange Town 01",
+                    InvariantTitle = "Enter: Nami",
+                    FileTitle = "Orange Town 01",
                     MangaChapters = "8-11",
                     ReleaseDate = null,
                     Crc32 = 0xC7CA5080
@@ -85,7 +90,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 2,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clksodhex000708jk7bak1tml",
-                    InvariantTitle = "Orange Town 02",
+                    InvariantTitle = "Treasure",
+                    FileTitle = "Orange Town 02",
                     MangaChapters = null,
                     ReleaseDate = null,
                     Crc32 = null
@@ -100,6 +106,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clqgslsp8006pnv5c08glvvjm",
                     InvariantTitle = "The Town of Welcome",
+                    FileTitle = "Whisky Peak 01",
                     MangaChapters = "106-109",
                     ReleaseDate = null,
                     Crc32 = null
@@ -112,7 +119,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clqgslt5n00bwnv5cj0e4wb0i",
-                    InvariantTitle = "Enies Lobby 01",
+                    InvariantTitle = "The Superhumans of Enies Lobby",
+                    FileTitle = "Enies Lobby 01",
                     MangaChapters = null,
                     ReleaseDate = null,
                     Crc32 = null
@@ -125,7 +133,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     Rank = 1,
                     //TODO: Clearing stuff with arcID
                     //ArcId = "clqgslt7v00cjnv5cg8eumgzc",
-                    InvariantTitle = "Post-Enies Lobby 01",
+                    InvariantTitle = "Fist of Love",
+                    FileTitle = "Post-Enies Lobby 01",
                     MangaChapters = null,
                     ReleaseDate = null,
                     Crc32 = null
@@ -169,15 +178,15 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         [Theory]
         [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // nested release name
         [InlineData("/path/to/One Pace/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // release name
-        [InlineData("/path/to/One Pace/[One Pace][2] Romance Dawn 02 [1080p][04A43CEF].mkv", "Romance Dawn 02")] // release name
-        [InlineData("/path/to/One Pace/[One Pace][8-11] Orange Town 01 [480p][A2F5F372].mkv", "Orange Town 01")] // release name
-        [InlineData("/path/to/One Pace/[One Pace][11-16] Orange Town 02 [480p][3D7957D8].mkv", "Orange Town 02")] // release name
+        [InlineData("/path/to/One Pace/[One Pace][2] Romance Dawn 02 [1080p][04A43CEF].mkv", "They Call Him \"Straw Hat\" Luffy")] // release name
+        [InlineData("/path/to/One Pace/[One Pace][8-11] Orange Town 01 [480p][A2F5F372].mkv", "Enter: Nami")] // release name
+        [InlineData("/path/to/One Pace/[One Pace][11-16] Orange Town 02 [480p][3D7957D8].mkv", "Treasure")] // release name
         [InlineData("/path/to/One Pace/1.mkv", "Romance Dawn, the Dawn of an Adventure")] // chapter range only
-        [InlineData("/path/to/One Pace/8-11.mkv", "Orange Town 01")] // chapter range only
+        [InlineData("/path/to/One Pace/8-11.mkv", "Enter: Nami")] // chapter range only
         [InlineData("/path/to/One Pace/Romance Dawn 01.mkv", "Romance Dawn, the Dawn of an Adventure")] // invariant title only
-        [InlineData("/path/to/One Pace/Orange Town 01.mkv", "Orange Town 01")] // invariant title only
+        [InlineData("/path/to/One Pace/Orange Town 01.mkv", "Enter: Nami")] // invariant title only
         [InlineData("/path/to/One Pace/D767799C.mkv", "Romance Dawn, the Dawn of an Adventure")] // uppercase CRC-32 only
-        [InlineData("/path/to/One Pace/c7ca5080.mkv", "Orange Town 01")] // lowercase CRC-32 only
+        [InlineData("/path/to/One Pace/c7ca5080.mkv", "Enter: Nami")] // lowercase CRC-32 only
         public async Task ShouldIdentifyEpisodeByPath(string path, string expectedInvariantTitle)
         {
             var itemLookupInfo = new ItemLookupInfo
@@ -193,8 +202,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
         //Regression test for titles that are substrings of other titles
         [Theory]
-        [InlineData("/path/to/One Pace/Enies Lobby 01.mkv", "Enies Lobby 01")]
-        [InlineData("/path/to/One Pace/Post-Enies Lobby 01.mkv", "Post-Enies Lobby 01")]
+        [InlineData("/path/to/One Pace/Enies Lobby 01.mkv", "The Superhumans of Enies Lobby")]
+        [InlineData("/path/to/One Pace/Post-Enies Lobby 01.mkv", "Fist of Love")]
         public async Task ShouldPreferLongerTitles(string path, string expectedInvariantTitle)
         {
             var itemLookupInfo = new ItemLookupInfo
