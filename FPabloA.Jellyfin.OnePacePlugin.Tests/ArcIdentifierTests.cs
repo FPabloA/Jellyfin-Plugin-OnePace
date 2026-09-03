@@ -107,22 +107,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
         }
 
-        //TODO:removing ArcID stuff
-        //[Theory]
-        //[InlineData("clkso3n3l000008l751pk86u4", "Romance Dawn")]
-        //[InlineData("clkso3uwi000108l724rj9vc0", "Orange Town")]
-        //[InlineData("clkso3zi6000208l7bhq7dtn6", "Syrup Village")]
-
-        //public async Task ShouldIdentifyArcByProviderId(string id, string expectedInvariantTitle)
-        //{
-        //    var itemLookupInfo = new ItemLookupInfo();
-        //    itemLookupInfo.SetOnePaceId(id);
-
-        //    var arc = await ArcIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
-
-        //    Assert.NotNull(arc);
-        //    Assert.Equal(expectedInvariantTitle, arc.InvariantTitle);
-        //}
 
         [Theory]
         [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]", "Romance Dawn")] // release name

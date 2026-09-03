@@ -157,24 +157,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             _repository = repositoryMock.Object;
         }
 
-        //TODO: Clearing stuff to do with EpisodeID
-        //[Theory]
-        //[InlineData("clkso9n2a000008jkdjxn6acj", "Romance Dawn 01")]
-        //[InlineData("clkso9t8u000108jk5lbu2409", "Romance Dawn 02")]
-        //[InlineData("clkso9z6n000208jk069u63ih", "Orange Town 01")]
-        //[InlineData("clksoa57k000308jkb3cu73n8", "Orange Town 02")]
-        //public async Task ShouldIdentifyEpisodeByProviderId(string episodeId, string expectedInvariantTitle)
-        //{
-        //    var itemLookupInfo = new ItemLookupInfo();
-        //    itemLookupInfo.SetOnePaceId(episodeId);
-
-        //    var episode = await EpisodeIdentifier.IdentifyAsync(_repository, itemLookupInfo, CancellationToken.None);
-
-        //    Assert.NotNull(episode);
-        //    Assert.Equal(episodeId, episode.Id);
-        //    Assert.Equal(expectedInvariantTitle, episode.InvariantTitle);
-        //}
-
         [Theory]
         [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // nested release name
         [InlineData("/path/to/One Pace/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // release name
