@@ -16,13 +16,13 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             {
                     "arc": 0,
                     "title": "Specials",
-                    "description": "Occasionally, the One Pace team likes to have some extra fun, so we made animated specials. See alternative storylines with twists you might not have expected.",
+                    "description": "specials arc description",
                     "episodes": [
                         {
                             "arc": 0,
                             "episode": 1,
                             "title": "One Piece Fan Letter",
-                            "description": "test",
+                            "description": "test for special",
                             "files": {
                                 "standard": {
                                     "CRC32": "00000000",
@@ -40,13 +40,13 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     "arc": 1,
                     "title": "Romance Dawn",
                     "mangaChapters": "1 - 7",
-                    "description": "Monkey D. Luffy sets out on an adventure to form a crew, find the legendary One Piece, and become the pirate king.",
+                    "description": "romance dawn arc description",
                     "episodes": [
                         {
                             "arc": 1,
                             "episode": 1,
                             "title": "Romance Dawn, the Dawn of an Adventure",
-                            "description": "test",
+                            "description": "test for romance dawn",
                             "mangaChapters": "1",
                             "released": "2020-12-02T12:00:00Z",
                             "files": {
@@ -64,7 +64,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "arc": 1,
                             "episode": 2,
                             "title": "They Call Him \"Straw Hat\" Luffy",
-                            "description": "test",
+                            "description": "test for romance dawn",
                             "mangaChapters": "2",
                             "released": "2020-12-02T12:00:00Z",
                             "files": {
@@ -82,7 +82,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                             "arc": 1,
                             "episode": 3,
                             "title": "The Pirate King and the Master Swordsman",
-                            "description": "test",
+                            "description": "test for romance dawn",
                             "mangaChapters": null,
                             "released": null,
                             "files": {
@@ -102,13 +102,13 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     "arc": 2,
                     "title": "Orange Town",
                     "mangaChapters": "8-21",
-                    "description": "Luffy and Zoro run afoul of a flashy crew of pirates and their captain, Buggy the Clown. They are joined by a young girl named Nami who helps them navigate this predicament.",
+                    "description": "orange town arc description",
                     "episodes": [
                         {
                             "arc": 2,
                             "episode": 1,
                             "title": "Enter: Nami",
-                            "description": "test",
+                            "description": "test for orange town",
                             "mangaChapters": "8-11",
                             "files": {
                                 "standard": {
@@ -189,6 +189,19 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         }
 
         [Fact]
+        public async Task ShouldPopulateArcDescriptionsCorrectly()
+        {
+            var result = await _webRepository.FindAllArcsAsync(CancellationToken.None);
+
+            Assert.NotNull(result);
+            Assert.Collection(result,
+                arc => Assert.Equal("specials arc description", arc.Description),
+                arc => Assert.Equal("romance dawn arc description", arc.Description),
+                arc => Assert.Equal("orange town arc description", arc.Description)
+                );
+        }
+
+        [Fact]
         public async Task ShouldFindAllEpisodes()
         {
             var result = await _webRepository.FindAllEpisodesAsync(CancellationToken.None);
@@ -214,6 +227,20 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 episode => Assert.Equal("Romance Dawn 02", episode.FileTitle),
                 episode => Assert.Equal("Romance Dawn 03", episode.FileTitle),
                 episode => Assert.Equal("Orange Town 01", episode.FileTitle));
+        }
+
+        [Fact]
+        public async Task ShouldPopulateEpisodeDescriptionsCorrectly()
+        {
+            var result = await _webRepository.FindAllEpisodesAsync(CancellationToken.None);
+            Assert.NotNull(result);
+            Assert.Collection(result,
+                episode => Assert.Equal("test for special", episode.Description),
+                episode => Assert.Equal("test for romance dawn", episode.Description),
+                episode => Assert.Equal("test for romance dawn", episode.Description),
+                episode => Assert.Equal("test for romance dawn", episode.Description),
+                episode => Assert.Equal("test for orange town", episode.Description)
+                );
         }
 
         //[Theory]
