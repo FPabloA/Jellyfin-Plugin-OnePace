@@ -243,5 +243,53 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 );
         }
 
+        //Tests same thing as find all arcs, but with an actual request; retrieves all arcs, only uncomment to test with the mock httpmessagehandler commented out
+        //[Fact]
+        //public async Task ShouldFindAllArcsActual()
+        //{
+        //    var result = await _webRepository.FindAllArcsAsync(CancellationToken.None);
+
+        //    Assert.NotNull(result);
+        //    Assert.Collection(result,
+        //        arc => Assert.Equal("Specials", arc.InvariantTitle),
+        //        arc => Assert.Equal("Romance Dawn", arc.InvariantTitle),
+        //        arc => Assert.Equal("Orange Town", arc.InvariantTitle),
+        //        arc => Assert.Equal("Syrup Village", arc.InvariantTitle),
+        //        arc => Assert.Equal("Gaimon", arc.InvariantTitle),
+        //        arc => Assert.Equal("Baratie", arc.InvariantTitle),
+        //        arc => Assert.Equal("Arlong Park", arc.InvariantTitle),
+        //        arc => Assert.Equal("The Adventures of Buggy's Crew", arc.InvariantTitle),
+        //        arc => Assert.Equal("Loguetown", arc.InvariantTitle),
+        //        arc => Assert.Equal("Reverse Mountain", arc.InvariantTitle),
+        //        arc => Assert.Equal("Whisky Peak", arc.InvariantTitle),
+        //        arc => Assert.Equal("The Trials of Koby-Meppo", arc.InvariantTitle),
+        //        arc => Assert.Equal("Little Garden", arc.InvariantTitle),
+        //        arc => Assert.Equal("Drum Island", arc.InvariantTitle),
+        //        arc => Assert.Equal("Alabasta", arc.InvariantTitle),
+        //        arc => Assert.Equal("Jaya", arc.InvariantTitle),
+        //        arc => Assert.Equal("Skypeia", arc.InvariantTitle),
+        //        arc => Assert.Equal("Long Ring Long Land", arc.InvariantTitle),
+        //        arc => Assert.Equal("Water Seven", arc.InvariantTitle),
+        //        arc => Assert.Equal("Enies Lobby", arc.InvariantTitle),
+        //        arc => Assert.Equal("Post-Enies Lobby", arc.InvariantTitle),
+        //        arc => Assert.Equal("Thriller Bark", arc.InvariantTitle),
+        //        arc => Assert.Equal("Sabaody Archipelago", arc.InvariantTitle),
+        //        arc => Assert.Equal("Amazon Lily", arc.InvariantTitle),
+        //        arc => Assert.Equal("Impel Down", arc.InvariantTitle),
+        //        arc => Assert.Equal("If You Could Go Anywhere... The Adventures of the Straw Hats", arc.InvariantTitle),
+        //        arc => Assert.Equal("Marineford", arc.InvariantTitle),
+        //        arc => Assert.Equal("Post-War", arc.InvariantTitle),
+        //        arc => Assert.Equal("Return to Sabaody", arc.InvariantTitle),
+        //        arc => Assert.Equal("Fishman Island", arc.InvariantTitle),
+        //        arc => Assert.Equal("Punk Hazard", arc.InvariantTitle),
+        //        arc => Assert.Equal("Dressrosa", arc.InvariantTitle),
+        //        arc => Assert.Equal("Zou", arc.InvariantTitle),
+        //        arc => Assert.Equal("Whole Cake Island", arc.InvariantTitle),
+        //        arc => Assert.Equal("Reverie", arc.InvariantTitle),
+        //        arc => Assert.Equal("Wano", arc.InvariantTitle),
+        //        arc => Assert.Equal("Egghead", arc.InvariantTitle)
+        //        );
+        //}
+
     }
 }
