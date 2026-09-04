@@ -41,8 +41,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             var episodeMatch = await EpisodeIdentifier.IdentifyAsync(_repository, info, cancellationToken).ConfigureAwait(false);
             if (episodeMatch != null)
             {
-                //var arc = await _repository.FindArcByIdAsync(episodeMatch.ArcId, cancellationToken).ConfigureAwait(false);
-                //TODO: need to make a findArc by arc number method instead of id
+
                 var arc = await _repository.FindArcByNumberAsync(episodeMatch.ArcNum, cancellationToken).ConfigureAwait(false); ;
                 if (arc != null)
                 {
@@ -59,19 +58,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                         ProductionYear = episodeMatch.ReleaseDate?.Year,
                         Overview = episodeMatch.Description
                     };
-
-                    //TODO: Clearing EpisodeId stuff
-                    //result.Item.SetOnePaceId(episodeMatch.Id);
-                    //var localization = await _repository.FindBestLocalizationByEpisodeIdAsync(
-                    //    episodeMatch.Id,
-                    //    info.MetadataLanguage ?? "en",
-                    //    cancellationToken)
-                    //    .ConfigureAwait(false);
-                    //if (localization != null)
-                    //{
-                    //    result.Item.Name = localization.Title;
-                    //    result.Item.Overview = localization.Description;
-                    //}
 
                 }
                 else
