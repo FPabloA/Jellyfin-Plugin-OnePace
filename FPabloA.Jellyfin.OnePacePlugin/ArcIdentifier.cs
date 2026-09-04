@@ -19,18 +19,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             ItemLookupInfo itemLookupInfo,
             CancellationToken cancellationToken)
         {
-            //TODO:removing ArcID stuff
-            //try to find by arc id first (might not work as onepacerr does not have an id field)
-            //var arcId = itemLookupInfo.GetOnePaceId();
-            //if (arcId != null)
-            //{
-            //    //attempt to find by id, If successful return the arc
-            //    var arc = await repository.FindArcByIdAsync(arcId, cancellationToken).ConfigureAwait(false);
-            //    if (arc != null)
-            //    {
-            //        return arc;
-            //    }
-            //}
 
             if (itemLookupInfo.Path != null && IdentifierUtil.OnePaceInvariantTitleRegex.IsMatch(itemLookupInfo.Path))
             {
