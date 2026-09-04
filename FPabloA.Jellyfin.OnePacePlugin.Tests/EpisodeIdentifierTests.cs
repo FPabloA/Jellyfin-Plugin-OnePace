@@ -11,12 +11,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
         private class TestEpisode : IEpisode
         {
-            //public string Id { get; init; }
-
             public int Rank { get; init; }
-
-            //TODO: Clearing stuff with arcID
-            //public string ArcId { get; init; }
 
             public string ArcNum { get; init; }
 
@@ -39,12 +34,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             {
                 new TestEpisode
                 {
-                    //TODO: Clearing stuff to do with EpisodeID
-                    //Id = "clkso9n2a000008jkdjxn6acj",
                     ArcNum = "1",
                     Rank = 1,
-                    //TODO: Clearing stuff with arcID
-                    //ArcId = "clksod80d000408jkbahl6yqa",
                     InvariantTitle = "Romance Dawn, the Dawn of an Adventure",
                     FileTitle = "Romance Dawn 01",
                     MangaChapters = "1",
@@ -54,12 +45,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    //TODO: Clearing stuff to do with EpisodeID
-                    //Id = "clkso9t8u000108jk5lbu2409",
                     ArcNum = "1",
                     Rank = 2,
-                    //TODO: Clearing stuff with arcID
-                    //ArcId = "clksodbar000508jk9wkz0y2n",
                     InvariantTitle = "They Call Him \"Straw Hat\" Luffy",
                     FileTitle = "Romance Dawn 02",
                     MangaChapters = "2",
@@ -69,12 +56,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    //TODO: Clearing stuff to do with EpisodeID
-                    //Id = "clkso9z6n000208jk069u63ih",
                     ArcNum = "2",
                     Rank = 1,
-                    //TODO: Clearing stuff with arcID
-                    //ArcId = "clksode6a000608jkfm0m77m3",
                     InvariantTitle = "Enter: Nami",
                     FileTitle = "Orange Town 01",
                     MangaChapters = "8-11",
@@ -84,12 +67,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    //TODO: Clearing stuff to do with EpisodeID
-                    //Id = "clksoa57k000308jkb3cu73n8",
                     ArcNum = "2",
                     Rank = 2,
-                    //TODO: Clearing stuff with arcID
-                    //ArcId = "clksodhex000708jk7bak1tml",
                     InvariantTitle = "Treasure",
                     FileTitle = "Orange Town 02",
                     MangaChapters = null,
@@ -99,12 +78,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    //TODO: Clearing stuff to do with EpisodeID
-                    //Id = "clqgsm6a403yjnv5cw3owwctw",
                     ArcNum = "10",
                     Rank = 1,
-                    //TODO: Clearing stuff with arcID
-                    //ArcId = "clqgslsp8006pnv5c08glvvjm",
                     InvariantTitle = "The Town of Welcome",
                     FileTitle = "Whisky Peak 01",
                     MangaChapters = "106-109",
@@ -114,11 +89,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    //TODO: Clearing stuff to do with EpisodeID
-                    //Id = "clqgsm60g03vvnv5cvf2afpq8",
                     Rank = 1,
-                    //TODO: Clearing stuff with arcID
-                    //ArcId = "clqgslt5n00bwnv5cj0e4wb0i",
                     InvariantTitle = "The Superhumans of Enies Lobby",
                     FileTitle = "Enies Lobby 01",
                     MangaChapters = null,
@@ -128,11 +99,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 
                 new TestEpisode
                 {
-                    //TODO: Clearing stuff to do with EpisodeID
-                    //Id = "clqgslvmk011bnv5cvl0khvob",
                     Rank = 1,
-                    //TODO: Clearing stuff with arcID
-                    //ArcId = "clqgslt7v00cjnv5cg8eumgzc",
                     InvariantTitle = "Fist of Love",
                     FileTitle = "Post-Enies Lobby 01",
                     MangaChapters = null,
@@ -145,14 +112,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             repositoryMock
                 .Setup(repository => repository.FindAllEpisodesAsync(It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult<IReadOnlyCollection<IEpisode>>(episodes));
-
-            //TODO: Clearing stuff to do with EpisodeID
-            //repositoryMock
-            //    .Setup(repository => repository.FindEpisodeByIdAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
-            //    .Returns((string episodeId, CancellationToken _) =>
-            //    {
-            //        return Task.FromResult(episodes.Find(episode => episode.Id == episodeId));
-            //    });
 
             _repository = repositoryMock.Object;
         }
