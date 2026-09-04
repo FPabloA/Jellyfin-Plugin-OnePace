@@ -15,8 +15,10 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             [
             {
                     "arc": 0,
+                    "saga": "Specials",
                     "title": "Specials",
                     "description": "specials arc description",
+                    "status": "complete",
                     "episodes": [
                         {
                             "arc": 0,
@@ -137,19 +139,19 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                     ItExpr.IsAny<CancellationToken>())
                 .Returns((HttpRequestMessage request, CancellationToken cancellationToken) =>
                 {
-                    //TODO: change uri to onepacerr
                     if (request.RequestUri != null &&
                         request.Method == HttpMethod.Get &&
-                        request.RequestUri.AbsoluteUri == "https://onepacerr.com/api/v1/metadata/arcs/?episodes=true&files=true")
+                        request.RequestUri.AbsoluteUri == "https://onepacerr.com/api/v1/metadata/arcs/?episodes=true&files=true"
+                        && request.Content != null)
                     {
-                        var requestContent = request.Content.ReadAsStringAsync(cancellationToken).Result;
+                        //var requestContent = request.Content.ReadAsStringAsync(cancellationToken).Result;
                         //if (requestContent.Contains("series") && requestContent.Contains("arcs"))
                         //{
                             return Task.FromResult(new HttpResponseMessage
-                            {
-                                StatusCode = HttpStatusCode.OK,
-                                Content = new StringContent(MetadataResponse)
-                            });
+                        {
+                            StatusCode = HttpStatusCode.OK,
+                            Content = new StringContent(MetadataResponse)
+                        });
                         //}
                     }
 
@@ -162,6 +164,11 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
             var httpClientFactoryMock = new Mock<IHttpClientFactory>(MockBehavior.Strict);
             httpClientFactoryMock.Setup(factory => factory.CreateClient(It.IsAny<string>()))
                 .Returns(() => new HttpClient(httpMessageHandlerMock.Object));
+
+            //Use this when testing with actual api requests instead of mock
+            //var httpClientFactoryMock = new Mock<IHttpClientFactory>(MockBehavior.Strict);
+            //httpClientFactoryMock.Setup(factory => factory.CreateClient(It.IsAny<string>()))
+            //    .Returns(() => new HttpClient());
 
             _webRepository = new WebRepository(httpClientFactoryMock.Object, new MemoryCache(new MemoryCacheOptions()),
                 NullLogger<WebRepository>.Instance);
@@ -267,7 +274,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         //        arc => Assert.Equal("Drum Island", arc.InvariantTitle),
         //        arc => Assert.Equal("Alabasta", arc.InvariantTitle),
         //        arc => Assert.Equal("Jaya", arc.InvariantTitle),
-        //        arc => Assert.Equal("Skypeia", arc.InvariantTitle),
+        //        arc => Assert.Equal("Skypiea", arc.InvariantTitle),
         //        arc => Assert.Equal("Long Ring Long Land", arc.InvariantTitle),
         //        arc => Assert.Equal("Water Seven", arc.InvariantTitle),
         //        arc => Assert.Equal("Enies Lobby", arc.InvariantTitle),
