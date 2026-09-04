@@ -37,7 +37,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             return await _memoryCache.GetOrCreateAsync(query, async cacheEntry =>
             {
-                //TODO: still need to change the content portion probably, and this will just be an http get, not graphql query
+
                 var request = new HttpRequestMessage(HttpMethod.Get, query);
                 request.Content = new StringContent(
                     JsonSerializer.Serialize(new
@@ -157,22 +157,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             }
         }
 
-        //TODO:Clearing stuff to do with arcID
-        //private async Task<JsonElement?> FindApiArcByIdAsync(string id, CancellationToken cancellationToken)
-        //{
-        //    try
-        //    {
-        //        var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
-        //        return apiMetadata?.GetProperty("arcs").EnumerateArray().FirstOrNull(apiArc =>
-        //            apiArc.GetProperty("id").GetNonNullString() == id);
-        //    }
-        //    catch (HttpRequestException)
-        //    {
-        //        //Details should be logged futher down the stack. just treat the data as unavailable
-        //        return null;
-        //    }
-        //}
-
         private async Task<JsonElement?> FindApiArcByNumberAsync(string arcNum, CancellationToken cancellationToken)
         {
             try
@@ -187,38 +171,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 return null;
             }
         }
-
-        //TODO: Clearing EpisodeID stuff
-        //private async Task<(string ArcId, JsonElement ApiEpisode)?> FindApiEpisodeByIdAsync(string id, CancellationToken cancellationToken)
-        //{
-
-        //    try
-        //    {
-        //        var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
-        //        if (apiMetadata == null)
-        //        {
-        //            return null;
-        //        }
-
-        //        foreach (var apiArc in apiMetadata.Value.GetProperty("arcs").EnumerateArray())
-        //        {
-        //            var matchingEpisode = apiArc.GetProperty("episodes").EnumerateArray()
-        //                .FirstOrNull(apiEpisode => apiEpisode.GetProperty("id").GetNonNullString() == id);
-
-        //            if (matchingEpisode != null)
-        //            {
-        //                return (apiArc.GetProperty("arc").ToString(), matchingEpisode.Value);
-        //            }
-        //        }
-        //        return null;
-        //    }
-        //    catch (HttpRequestException)
-        //    {
-        //        //Details should be logged futher down the stack. just treat the data as unavailable
-        //        return null;
-        //    }
-
-        //}
 
         public async Task<ISeries?> FindSeriesAsync(CancellationToken cancellationToken)
         {
@@ -259,16 +211,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return results;
         }
 
-        //TODO:Clearing stuff to do with arcID
-        //public async Task<IArc?> FindArcByIdAsync(string id, CancellationToken cancellationToken)
-        //{
-
-        //    var apiArc = await FindApiArcByIdAsync(id, cancellationToken).ConfigureAwait(false);
-        //    return apiArc != null
-        //        ? new RepositoryArc(apiArc.Value)
-        //        : null;
-
-        //}
 
         public async Task<IArc?> FindArcByNumberAsync(string arcNum, CancellationToken cancellationToken)
         {
@@ -304,17 +246,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             return results;
         }
 
-        //TODO: clearing episodeid stuff
-        //public async Task<IEpisode?> FindEpisodeByIdAsync(string id, CancellationToken cancellationToken)
-        //{
-
-        //    var result = await FindApiEpisodeByIdAsync(id, cancellationToken).ConfigureAwait(false);
-        //    return result != null
-        //        ? new RepositoryEpisode(result.Value.ArcId, result.Value.ApiEpisode)
-        //        : null;
-
-        //}
-
         //One Pacerr doesn't provide image data, so will return null for now
 
         public Task<IReadOnlyCollection<IArt>> FindAllLogoArtBySeriesAsync(CancellationToken cancellationToken)
@@ -331,13 +262,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             return null;
         }
-
-        //public Task<IReadOnlyCollection<IArt>> FindAllCoverArtByEpisodeIdAsync(string episodeId, CancellationToken cancellationToken)
-        //{
-        //    return null;
-        //}
-
-        //One pacerr doesn't use language codes at all and only provides titles and descriptions in english, will need to rework this to just return en probably
 
         public async Task<ILocalization?> FindBestLocalizationBySeriesAsync(string languageCode, CancellationToken cancellationToken)
         {
@@ -363,44 +287,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 return null;
             }
         }
-
-        //TODO:Clearing stuff to do with arcID
-        //public async Task<ILocalization?> FindBestLocalizationByArcIdAsync(string arcId, string languageCode, CancellationToken cancellationToken)
-        //{
-        //    var apiArc = await FindApiArcByIdAsync(arcId, cancellationToken).ConfigureAwait(false);
-        //    if (apiArc != null)
-        //    {
-        //        var bestApiTranslation = ChooseBestApiTranslation(
-        //            apiArc.Value.GetProperty("translations").EnumerateArray(),
-        //            ToApiLanguageCode(languageCode));
-
-        //        if (bestApiTranslation != null)
-        //        {
-        //            return new RepositoryLocalization(bestApiTranslation.Value);
-        //        }
-        //    }
-
-        //    return null;
-        //}
-
-        //TODO: Clearing stuff to do with EpisodeID
-        //public async Task<ILocalization?> FindBestLocalizationByEpisodeIdAsync(string episodeId, string languageCode, CancellationToken cancellationToken)
-        //{
-        //    var result = await FindApiEpisodeByIdAsync(episodeId, cancellationToken)
-        //    .ConfigureAwait(false);
-        //    if (result == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    var apiTranslation = ChooseBestApiTranslation(
-        //        result.Value.ApiEpisode.GetProperty("translations").EnumerateArray(),
-        //        ToApiLanguageCode(languageCode));
-
-        //    return apiTranslation != null
-        //        ? new RepositoryLocalization(apiTranslation.Value)
-        //        : null;
-        //}
 
         private static DateTime? ParseReleaseDate(JsonElement jsonElement)
         {
@@ -428,18 +314,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             }
             return $"{arcTitle} {padEpisode}";
         }
-
-        //private sealed class RepositorySeries : ISeries
-        //{
-        //    public RepositorySeries(JsonElement apiSeries)
-        //    {
-        //        InvariantTitle = apiSeries.GetProperty("invariant_title").GetNonNullString();
-        //    }
-
-        //    public string InvariantTitle { get; }
-
-        //    public string OriginalTitle => "One Piece";
-        //}
         
         //Attempting to move away from needing series in metadata JSON
         private sealed class RepositorySeries : ISeries
@@ -458,8 +332,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
         {
             public RepositoryArc(JsonElement apiArc)
             {
-                //TODO: Clearing stuff with arcID
-                //Id = apiArc.GetProperty("id").GetNonNullString();
                 Rank = apiArc.GetProperty("arc").GetInt32();
                 InvariantTitle = apiArc.GetProperty("title").GetNonNullString();
                 //If content is anime only, there will be no mangaChapters property, need to check
@@ -469,11 +341,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 }
                 
                 Description = apiArc.GetProperty("description").GetString();
-                //ReleaseDate = ParseReleaseDate(apiArc.GetProperty("released_at"));
             }
 
-            //TODO: Clearing stuff with arcID
-            //public string Id { get; }
+
 
             public int Rank { get; }
 
@@ -482,19 +352,13 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             public string? MangaChapters { get; }
 
             public string Description { get; }
-
-            //public DateTime? ReleaseDate { get; }
         }
 
         private sealed class RepositoryEpisode : IEpisode
         {
             public RepositoryEpisode(string arcNum, string arcName, JsonElement apiEpisode)
             {
-                //TODO: Clearing stuff to do with EpisodeID
-                //Id = apiEpisode.GetProperty("id").GetNonNullString();
                 Rank = apiEpisode.GetProperty("episode").GetInt32();
-                //TODO: Clearing stuff with arcID
-                //ArcId = ArcId;
                 ArcNum = arcNum;
                 InvariantTitle = apiEpisode.GetProperty("title").GetNonNullString();
                 FileTitle = RebuildFileTitle(arcName, Rank);
@@ -516,13 +380,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 }
             }
 
-            //TODO: Clearing stuff to do with EpisodeID
-            //public string Id { get; }
-
             public int Rank { get; }
-
-            //TODO: Clearing stuff with arcID
-            //public string ArcId { get; }
 
             public string ArcNum { get; }
 
