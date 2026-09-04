@@ -15,19 +15,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             ItemLookupInfo itemLookupInfo,
             CancellationToken cancellationToken)
         {
-            //attempt to retrieve metadata using the episode ID (probably not relevant to this)
-            //TODO: Clearing EpisodeId stuff
-            //var episodeId = itemLookupInfo.GetOnePaceId();
-            //if (episodeId != null)
-            //{
-            //    var episodeInfo = await repository
-            //        .FindEpisodeByIdAsync(episodeId, cancellationToken)
-            //        .ConfigureAwait(false);
-            //    if (episodeInfo != null)
-            //    {
-            //        return episodeInfo;
-            //    }
-            //}
 
             if (itemLookupInfo.Path != null && IdentifierUtil.OnePaceInvariantTitleRegex.IsMatch(itemLookupInfo.Path))
             {
