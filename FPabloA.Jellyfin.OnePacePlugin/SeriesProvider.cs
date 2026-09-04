@@ -54,12 +54,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 result.Item.SetProviderId("AniDB", "69"); // https://anidb.net/anime/69
                 result.Item.SetProviderId("AniList", "21"); // https://anilist.co/anime/21/ONE-PIECE/
 
-                //var localization = await _repository.FindBestLocalizationBySeriesAsync(info.MetadataLanguage ?? "en", cancellationToken).ConfigureAwait(false);
-                //if (localization != null)
-                //{
-                //    result.Item.Name = localization.Title;
-                //    result.Item.Overview = localization.Description;
-                //}
             }
 
             _log.LogInformation(
