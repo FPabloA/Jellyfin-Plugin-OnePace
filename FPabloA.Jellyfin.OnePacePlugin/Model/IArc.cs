@@ -5,10 +5,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
     //Represents a series arc
     public interface IArc
     {
-        //Gets the CUID for the Arc (might not be relevant anymore, unless this is for jellyfin purposes and not one pace)
-        //TODO: Clearing stuff with arcID
-        //string Id { get; }
-
         //Gets the rank/order of the arc within the series
         int Rank { get; }
 
@@ -20,9 +16,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
 
         //Gets the english description for the arc
         string Description { get; }
-
-        //Gets the release date of the arc. Null if release date is unknown, or otherwise unavailable (might not be provided by onepacerr API, could remove)
-        //DateTime? ReleaseDate { get; }
 
     }
 }
