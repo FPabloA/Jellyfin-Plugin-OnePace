@@ -10,7 +10,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
 {
     public class WebRepositoryTests
     {
-        //TODO:Rework this to make it more inline with a OnePacerr Response vs a One Pace API response
         private const string MetadataResponse = """
             [
             {
@@ -144,15 +143,12 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                         request.RequestUri.AbsoluteUri == "https://onepacerr.com/api/v1/metadata/arcs/?episodes=true&files=true"
                         && request.Content != null)
                     {
-                        //var requestContent = request.Content.ReadAsStringAsync(cancellationToken).Result;
-                        //if (requestContent.Contains("series") && requestContent.Contains("arcs"))
-                        //{
-                            return Task.FromResult(new HttpResponseMessage
+                        return Task.FromResult(new HttpResponseMessage
                         {
                             StatusCode = HttpStatusCode.OK,
                             Content = new StringContent(MetadataResponse)
                         });
-                        //}
+
                     }
 
                     return Task.FromResult(new HttpResponseMessage
