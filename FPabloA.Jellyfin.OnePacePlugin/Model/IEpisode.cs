@@ -9,14 +9,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Model
     //Represents a series episode
     public interface IEpisode
     {
-        //Gets the CUID for the Episode (might not be relevant anymore, unless this is for jellyfin purposes and not one pace)
-        //TODO: Clearing EpisodeId stuff
-        //string Id { get; }
-
-        ////Gets the CUID of the arc that the episode belongs to (if the arc CUID is not relevant, then this will be removed too)
-        //TODO: Clearing ArcId stuff
-        //string ArcId { get; }
-
         //Gets the arc number that the episode belongs to
         string ArcNum { get; }
 
