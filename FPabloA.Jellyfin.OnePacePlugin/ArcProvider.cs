@@ -45,22 +45,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                     IndexNumber = arcMatch.Rank,
                     Name = arcMatch.InvariantTitle,
                     Overview = arcMatch.Description
-                    //Pretty sure these will not be provided by one pacerr API
-                    //PremierDate = arcMatch.ReleaseDate
-                    //ProductionYear = arcMatch.ReleaseDate?.Year
                 };
 
-                //TODO:removing ArcID stuff
-                //result.Item.SetOnePaceId(arcMatch.Id);
-
-                //var localization = await _repository
-                //    .FindBestLocalizationByArcIdAsync(arcMatch.Id, info.MetadataLanguage ?? "en", cancellationToken)
-                //    .ConfigureAwait(false);
-                //if (localization != null)
-                //{
-                //    result.Item.Name = localization.Title;
-                //    result.Item.Overview = localization.Description;
-                //}
             }
 
             _log.LogInformation(
@@ -86,8 +72,6 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 {
                     IndexNumber = season.IndexNumber,
                     Name = season.Name,
-                    //PremiereDate = season.PremiereDate,
-                    //ProductionYear = season.ProductionYear,
                     Overview = season.Overview,
                     ProviderIds = season.ProviderIds,
                     SearchProviderName = Name
