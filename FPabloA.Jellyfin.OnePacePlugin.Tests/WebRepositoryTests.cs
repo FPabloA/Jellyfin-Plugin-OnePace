@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using ICU4N.Util;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -244,6 +245,17 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
                 episode => Assert.Equal("test for romance dawn", episode.Description),
                 episode => Assert.Equal("test for orange town", episode.Description)
                 );
+        }
+
+        [Theory]
+        [InlineData("0", "Specials")]
+        [InlineData("1", "Romance Dawn")]
+        [InlineData("2", "Orange Town")]
+        public async Task ShouldFindArcByNum(string arcNum, string expectedTitle)
+        {
+            var result = await _webRepository.FindArcByNumberAsync(arcNum, CancellationToken.None);
+            Assert.NotNull(result);
+            Assert.Equal(result.InvariantTitle, expectedTitle);
         }
 
         //Tests same thing as find all arcs, but with an actual request; retrieves all arcs, only uncomment to test with the mock httpmessagehandler commented out

@@ -162,8 +162,8 @@ namespace FPabloA.Jellyfin.OnePacePlugin
             try
             {
                 var apiMetadata = await FetchMetadataAsync(cancellationToken).ConfigureAwait(false);
-                return apiMetadata?.GetProperty("arcs").EnumerateArray().FirstOrNull(apiArc =>
-                    apiArc.GetProperty("arc").GetNonNullString() == arcNum);
+                return apiMetadata?.EnumerateArray().FirstOrNull(apiArc =>
+                    apiArc.GetProperty("arc").ToString() == arcNum);
             }
             catch (HttpRequestException)
             {

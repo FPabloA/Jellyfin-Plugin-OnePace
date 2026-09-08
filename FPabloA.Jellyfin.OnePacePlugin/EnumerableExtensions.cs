@@ -8,7 +8,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
     internal static class EnumerableExtensions
     {
         public static T? FirstOrNull<T>(this IEnumerable<T> source, Func<T, bool> predicate)
-            where T : struct
+        where T : struct
         {
             foreach (var item in source)
             {
@@ -17,6 +17,7 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                     return item;
                 }
             }
+
             return null;
         }
 
