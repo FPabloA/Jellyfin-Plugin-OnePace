@@ -117,9 +117,9 @@ namespace FPabloA.Jellyfin.OnePacePlugin.Tests
         }
 
         [Theory]
-        [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // nested release name
+        [InlineData("/path/to/One Pace/[One Pace][1-7] Romance Dawn [1080p]/[One Pace][1] Romance Dawn 01 [1080p][FB72C13F].mkv", "Romance Dawn, the Dawn of an Adventure")] // nested release name
         [InlineData("/path/to/One Pace/[One Pace][1] Romance Dawn 01 [1080p][D767799C].mkv", "Romance Dawn, the Dawn of an Adventure")] // release name
-        [InlineData("/path/to/One Pace/[One Pace][2] Romance Dawn 02 [1080p][04A43CEF].mkv", "They Call Him \"Straw Hat\" Luffy")] // release name
+        [InlineData("/path/to/One Pace/[One Pace][2] Romance Dawn 02 [1080p][667784D2].mkv", "They Call Him \"Straw Hat\" Luffy")] // release name
         [InlineData("/path/to/One Pace/[One Pace][8-11] Orange Town 01 [480p][A2F5F372].mkv", "Enter: Nami")] // release name
         [InlineData("/path/to/One Pace/[One Pace][11-16] Orange Town 02 [480p][3D7957D8].mkv", "Treasure")] // release name
         [InlineData("/path/to/One Pace/1.mkv", "Romance Dawn, the Dawn of an Adventure")] // chapter range only

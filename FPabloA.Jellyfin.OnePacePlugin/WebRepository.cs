@@ -373,11 +373,14 @@ namespace FPabloA.Jellyfin.OnePacePlugin
                 Description = apiEpisode.GetProperty("description").GetString();
 
                 //Use this when switching to one pacerr crc testing
-                var crc32String = apiEpisode.GetProperty("files").GetProperty("standard").GetProperty("CRC32").GetString();
-                if (crc32String != null)
-                {
-                    Crc32 = uint.Parse(crc32String, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+                if (apiEpisode.TryGetProperty("files", out _)){
+                    var crc32String = apiEpisode.GetProperty("files").GetProperty("standard").GetProperty("CRC32").GetString();
+                    if (crc32String != null)
+                    {
+                        Crc32 = uint.Parse(crc32String, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+                    }
                 }
+                
             }
 
             public int Rank { get; }
